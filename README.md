@@ -1,4 +1,113 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+
+# Fished it, Mate!
+
+<br>
+<br>
+Fished it, Mate! Is meant to be a blog site for fishing. The user can create read update and delete [in line with CRUD functionality] a post, and also comments on other blogs posts. The desire was to make a more interactive type blog that users can add a 'Location', 'Type of fish caught', and 'Fishing method used', to give more specific and user orientated experience. Such as : "martin's fisheries - martinchester', 'Carp', 'Pole and float'. Extra features for the future could include more details such as a pond or depth, or even weather/season. this type of website could be good for users keeping a diary or log of fishing activity but with the added functionality of searching for information pertinent to their criteria. This could be purely for interest or for looking for new venues/places to fish based the expereince of like minded people.
+<br>
+<br>
+<hr>
+
+
+[Developer: Martin Cowey](https://github.com/MartinCowey)
+
+[Link to deployed site]()
+
+<hr>
+
+
+
+
+## Design
+
+
+### Colour Scheme
+
+
+### Database Schema
+
+
+
+<img src="documentation/images/ERD for fishing website MAIN.webp">
+
+### Models :
+
+#### Allauth User Model
+
+The User model is an integral component of Django Allauth, featuring pre-established fields as part of its standard configuration. Among these fields are username, email, name, password, and others. This model primarily serves the purpose of user authentication, which is why it is not recommended to make direct alterations to it. Furthermore, the User model is linked to the Profile model through a one-to-one relationship, facilitating the management of user-specific data and interactions.
+
+
+#### Blog Model
+
+The Blog Model is the basis of providing valuable information for the user to act like a diary or log, but also being viewable to other users create a source of  information for new venues or fishing experiences to take on board and try.
+
+#### Comment Model
+
+The Comment Model gives the user the opportunity to get involved with other users posts - making it more interactive and community based. The ability to make a log for your own expereince is great but being able to share exepriences and contribute to other peoples fishing experience is a valuable piece of the website.
+
+#### Profile Model - custom //1
+
+The Profile Model in this MVP is designed as a simple user datapoint for further scope. Here we use the profile model for a more extanded use than the allauth features of Django. This way the user has a specified base on which to move around the site for the blog model and comment model - but will be ready for future scope such as the location model and searchable content.
+
+#### Location Model - custom //2
+
+This is outside the scope of the MVP but is integral to the search capabilites of the site - creating look up charts to store relevant information such as Location, Fishing type and different fish - this is would contribute to the nature of the site being about logging data relevant to the fishing experience that can be searchable at a later date or by others.
+
+## Future Features
+
+Future features are beyond the initial scope of this project but are important to discuss. They help to give context to the project and a direction. The mvp for this is basic but gives enough continuity for the user to engage with the experience.
+
+### Search Feature
+
+This is an immediate future feature and should be implimented in the second phase. The ability to search is a must and makes the experience even more engaging. This feature simply allows for the main idea of 'Location' - 'Type of Fish' - 'Fishing methods' to be organised an used in a way that allows user choice of the information they see.
+
+### Search Feature 2
+
+After the search features for 'Location' - 'Type of Fish' - 'Fishing methods' are implimented then more can be added for a finer more intuitive experience. Things such as 'Fishing method' can be broken down into further sub menues like float or type of float. We cana also look at 'depth', or 'season', 'time of day', 'time of year' or even 'weather conditions' to add more exciting interactivity to the site.
+
+### Password Reset with Email Validation
+
+Introduce a secure and user-friendly password reset system that relies on email validation, making it easier for users to regain access to their accounts.
+
+### Messaging System/Ticket System
+
+- Develop a messaging system that enables users to send direct messages to each other, fostering user interaction.
+- Alternatively, create a ticket system where users can contact the developer for technical issues or support, providing a more organized and responsive channel for communication. This is especially important because the current contact method is limited to an email in the footer, which may not be as user-friendly.
+
+### Sharing
+
+Add a share button to articles, allowing users to effortlessly share content on their social media platforms, increasing the website's visibility and user engagement.
+
+### Favourites
+
+Add a favourites button to articles, allowing users to effortlessly share content on their social media platforms, increasing the website's visibility and user engagement.
+
+
+
+
+### Fonts
+
+The font used in this project <br>
+![Font]()
+
+### Wireframes
+
+#### Desktop
+
+<details><summary>Home</summary>
+<img src="">
+</details>
+
+
+
+#### Mobile
+
+<details><summary>Home</summary>
+<img src="">
+</details>
+
+
+
 
 Welcome Martin Cowey,
 
