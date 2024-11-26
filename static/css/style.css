@@ -1,10 +1,86 @@
-body {
+* { 
+    margin: 0; 
+    padding: 0; 
+} 
+
+/* body {
     background-color: #cdd7cd;
-}
+} */
 
 h1 {
     font-family: "Delius Swash Caps", serif;
     font-weight: 400;
     font-style: normal;
     color: red;
+}
+
+
+.navbar {
+    background-color: #3f603f; /* Sets the navbar background to green */
+    color: white; /* Sets the text color to white */
+    font-family: 'Red Hat Display', Times, serif; /* Sets the font to Times New Roman */
+}
+
+.navbar-brand {
+    padding-left: 20px; /* Adds padding to the left of the brand logo */
+}
+
+.nav-link {
+    color: white ; /* Ensures navbar links are white */
+    margin-right: 20px;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    padding: 20px; /* Adds padding to the left of the brand logo */
+    color: white ; /* Ensures navbar links are white */
+}
+
+.hover:hover {
+    color: green;
+    background-color: white;
+    opacity: 0.5;
+    border-radius: 5px;
+}
+
+.navbar-toggler {
+    border-color: white; /* Sets the toggler border color to white */
+}
+
+.form-inline {
+    display: flex;
+    justify-content: flex-end; /* Aligns search form to the right */
+}
+
+.d-flex {
+    padding-right: 20px;
+}
+
+.form-control {
+    margin-right: 5px; /* Adds space between input and button */
+}
+
+.btn-outline-success {
+    color: white;
+    border-color: white;
+}
+
+.btn-outline-success:hover {
+    background-color: white;
+    color: green;
+}
+
+.dropdown-item:hover {
+    background-color: #3f603f;
+    height: 100%;
+    color: aliceblue;
+}
+
+
+/* footer */
+.container-fluid {
+width: 100%;
+/* padding-right: var(--bs-gutter-x, .75rem); */
+/* padding-left: var(--bs-gutter-x, .75rem); */
+margin-right: auto;
+margin-left: auto;
 }

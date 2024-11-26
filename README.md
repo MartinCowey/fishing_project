@@ -161,3 +161,10 @@ Now Succesfully deployed:
 <br>
 <hr>
 
+## Errors and Bugs
+
+An error which I need reminding about...`Debug=True`. This has got me a few times, especially with the styling aspects, and always after I git push notice I didn't set back to False.
+<br>
+<img src="documentation/images/07_debug_true.webp">
+<br>
+
