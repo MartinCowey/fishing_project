@@ -28,7 +28,7 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
 
 
 
-<img src="documentation/images/ERD for fishing website MAIN.webp">
+<img src="documentation/images/ERD_fishing_main.webp">
 
 ### Models :
 
@@ -107,7 +107,24 @@ The font used in this project <br>
 </details>
 
 
+## Deployment
 
+After the initial startproct was created I went on to adding my apps - the first app beig the blog. This was created with the `python3 manage.py startapp blog` command, producing the relevant folder structure from Django with it's own `models.py` and `views.py` files. Then we register the app so Django can include it in our project via the `settings.py` `INSTALLED_APP`S as `'blog',`. Apps add specific functionality to the project.
+
+Page loaded for the project 
+<br>
+<img src="documentation/images/01_Initial_setup.webp">
+<br>
+
+To test the app we can create a HttpResponse in the views.py using from django.http import HttpResponse and a function that will show on the site as a 'response' to the appended /blog
+
+<br>
+<img src="documentation/images/02_Initial_test.webp">
+<br>
+
+
+<br>
+<hr>
 
 Welcome Martin Cowey,
 
