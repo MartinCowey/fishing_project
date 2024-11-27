@@ -191,3 +191,13 @@ The first model to be applied was the blog model. This was populated in the clas
 <br>
 <img src="documentation/images/09_blog_model.webp">
 <br>
+<br>
+Based on my ERD fields I populated the blog modle with:
+
+```author = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True)
+    content = models.TextField()
+    excerpt = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    featured_image = CloudinaryField('image')```
