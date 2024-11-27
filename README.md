@@ -133,6 +133,10 @@ Next create a Procfile in the root directory [capital P] and the only thing need
 
 In `settings.py` set `Debug = False` for the Heroku deployment - this protects the website from showing important information especially during bugs or errors.
 
+Moving forward I changed to the code: DEBUG = 'DEBUG' in os.environ and added the conncetion in the env.py file so Herkou sees as False and local will see as True.
+
+Also used the `python3 manage.py collectstatic` and made sure to remove the `DISABLE_COLLECTSTATIC` from Heroku.
+
 Bug in deployment:
 <br>
 <img src="documentation/images/04_heroku_error.webp">
@@ -168,3 +172,10 @@ An error which I need reminding about...`Debug=True`. This has got me a few time
 <img src="documentation/images/07_debug_true.webp">
 <br>
 
+Not so much an error but decided to use a branch moving into the build stages to keep flow and then merge to main with changes that work.
+Created a barnch : git switch -c branchname, then git push --set-upstream origin martinapp for the first push so REMOTE knows it exists.
+
+Then for megring use: 
+<br>
+<img src="documentation/images/08_branch.webp">
+<br>
