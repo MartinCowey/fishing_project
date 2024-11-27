@@ -186,7 +186,7 @@ Then for merging use: switch to the main - `git checkout main`, pull the changes
 
 ### Blog
 
-The first model to be applied was the blog model. This was populated in the class Blog and migrated succesfully - this migrated succesfully :
+The first model to be applied was the blog model. This was populated in the class Blog and migrated succesfully - this migrated succesfully and fits in with the ERD:
 
 <br>
 <img src="documentation/images/09_blog_model.webp">
