@@ -172,10 +172,22 @@ An error which I need reminding about...`Debug=True`. This has got me a few time
 <img src="documentation/images/07_debug_true.webp">
 <br>
 
-Not so much an error but decided to use a branch moving into the build stages to keep flow and then merge to main with changes that work.
-Created a barnch : git switch -c branchname, then git push --set-upstream origin martinapp for the first push so REMOTE knows it exists.
+Not so much an error and more a precaution *or better workflow* decided to use a branch moving into the build stages to keep flow and then merge to main with changes that work.
+Created a barnch : `git switch -c branchname`, then `git push --set-upstream origin martinapp` for the first push so REMOTE knows it exists.
 
-Then for megring use: 
+Then for merging use: switch to the main - `git checkout main`, pull the changes from the REMOTE main branch - `git pull`. Switch back to the local `git checkout martinapp`, merge this local branch into the local new branch `git merge main`. Resolve any conflicts then *git add and commit* and finally push. Then being my own repo I need do the pull requests.
+
 <br>
 <img src="documentation/images/08_branch.webp">
+<br>
+
+
+## Apps and Models
+
+### Blog
+
+The first model to be applied was the blog model. This was populated in the class Blog and migrated succesfully - this migrated succesfully :
+
+<br>
+<img src="documentation/images/09_blog_model.webp">
 <br>
