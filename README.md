@@ -8,15 +8,86 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
 <br>
 <hr>
 
+ <!-- Google Fonts CSS -->
+<link rel="preconnect" href="https://fonts.gstatic.com">    
+<link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
-[Developer: Martin Cowey](https://github.com/MartinCowey)
+<style>
+h2 {
+    color: #fcc58e;
+    font-family: "Red Hat Display", serif;
+    font-size: 20px;
+}
 
-[Link to deployed site]()
+/* Style the button */
+.top-link {
+  transition:       all .25s ease-in-out;
+  position:         fixed;
+  bottom:           0;
+  right:            0;
+  display:          inline-flex;
+  color:            #000000;
 
+  cursor:           pointer;
+  align-items:      center;
+  justify-content:  center;
+  margin:           0 2em 2em 0;
+  border-radius:    25%;
+  padding:          .25em;
+  width:            2em;
+  height:           2em;
+  background-color: #fcc58e;
+}
+</style>
+
+<p align="center">
+  <a href="https://github.com/MartinCowey">
+    <img src="documentation/logo/04_logo_fish_B.webp" alt="Logo" height="200">
+  </a>
+
+  <h2 class="port" align="center">Developer: Martin Cowey</h2>
+  <br>
+  
+
+  <p align="center">
+    See the website
+    <br />
+    <a href="https://fished-it-mate-c5653a6c521b.herokuapp.com/"><strong>View Deployed site »</strong></a>
+    <br />
+  </p>
+</p>
+
+
+<br>
 <hr>
 
+# Contents
 
+<details>
+<summary>
+Table of Contents ::
+</summary>
 
+- [Design](#design)
+  - [Colour Scheme](#colour-scheme)
+  - [Fonts](#fonts)
+  - [Wireframes](#wireframes)
+    - [Desktop](#desktop)
+    - [Mobile)](#mobile)
+
+- [Models](#models-)
+  - [Database Schema](#database-schema)
+  - [All Auth](#allauth-user-model)
+  - [Blog](#blog-model)
+  - [Comments](#comment-model)
+  - [Custom](#custom-model)
+    - [Profile custom 1](#profile-model---custom-1)
+    - [Location custom 2](#location-model---custom-2)
+<br>
+</details>
+<br>
+<br>
+<hr>
 
 ## Design
 
@@ -24,26 +95,53 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
 ### Colour Scheme
 
 
+### Fonts
+
+The font used in this project 
+
+<br>
+<img src="documentation/images/12_fonts.webp">
+<br>
+I chose 2 fonts for the contrast. The first and main being Red Hat, which will be used for most of the project.
+
+
+### Wireframes
+
+#### Desktop
+
+<details><summary>Home</summary>
+<img src="">
+</details>
+
+#### Mobile
+
+<details><summary>Home</summary>
+<img src="">
+</details>
+
+<hr>
+
+## Models :
+
 ### Database Schema
-
-
 
 <img src="documentation/images/ERD_fishing_main.webp">
 
-### Models :
 
-#### Allauth User Model
+### Allauth User Model
 
 The User model is an integral component of Django Allauth, featuring pre-established fields as part of its standard configuration. Among these fields are username, email, name, password, and others. This model primarily serves the purpose of user authentication, which is why it is not recommended to make direct alterations to it. Furthermore, the User model is linked to the Profile model through a one-to-one relationship, facilitating the management of user-specific data and interactions.
 
 
-#### Blog Model
+### Blog Model
 
 The Blog Model is the basis of providing valuable information for the user to act like a diary or log, but also being viewable to other users create a source of  information for new venues or fishing experiences to take on board and try.
 
-#### Comment Model
+### Comment Model
 
 The Comment Model gives the user the opportunity to get involved with other users posts - making it more interactive and community based. The ability to make a log for your own expereince is great but being able to share exepriences and contribute to other peoples fishing experience is a valuable piece of the website.
+
+### custom model
 
 #### Profile Model - custom //1
 
@@ -82,29 +180,6 @@ Add a share button to articles, allowing users to effortlessly share content on 
 
 Add a favourites button to articles, allowing users to effortlessly share content on their social media platforms, increasing the website's visibility and user engagement.
 
-
-
-
-### Fonts
-
-The font used in this project <br>
-![Font]()
-
-### Wireframes
-
-#### Desktop
-
-<details><summary>Home</summary>
-<img src="">
-</details>
-
-
-
-#### Mobile
-
-<details><summary>Home</summary>
-<img src="">
-</details>
 
 
 ## Deployment
@@ -208,3 +283,93 @@ Based on my ERD fields I populated the blog modle with:
 ```
 
 </details>
+
+### Admin
+
+Admin successfully brought through with Django :
+
+```
+from .models import Blog
+
+# Register your models here.
+admin.site.register(Blog)
+```
+
+Adding the blog/admin.py file registers the Blog model with Django's admin site. Taking the Blog model from our models'py file and then registers the Blog model with the Django admin site which automatically creates an admin interface for it adding an element of CRUD to this admin page for blog posts via the admin panel. A quick way to manage blogs posts for the superuser at this stage.
+The line from .models import Post imports the Post model from the current application's models.py file.
+
+<br>
+<img src="documentation/images/10_admin_panel.webp">
+<br>
+<br>
+
+## Procedure
+
+### Git branch
+
+The prupsoe of making a new branch from the main in this instance [being my individual project] was to help create a more non-destructive workflow. Adopting a similar strategy from my days working in design and photography and using such things as Photoshop or Illustrator. The premise being that I work on a branch during changes, then push to the main branch once I have worked on bugs and errors. I believe this would be a more professional process too.
+
+<details>
+<summary>Git merge process</summary>
+Process:
+
+branch/local ::
+`git add . && git commit -m "Add *****"`
+`git push` #Push your changes to the remote repository
+>>having previous used the command `git push --set-upstream origin branch_name` then `git push` is ok at this stage - however [if not] then the correct use here would be `git push origin branch_name`
+
+git checkout main
+
+main ::
+`git pull` #pull the latest changes from REMOTE main branch
+`git checkout branch_name`
+
+branch/local ::
+`git merge main`
+resolve any conflicts here - may need to save/close the MERGE_MSG here [see below]
+if any updaes needed to be resolved `git add . && git commit -m "Changes"`
+
+FINAL ::
+`git push`
+<br>
+</details>
+
+<br>
+
+
+<details>
+<summary>Merge issue</summary>
+
+One bug I encountered that turned out to be more user error - due to relearning the branch/main merge - was with the process outlined above. When encountering the process I thought I was getting a bug with the MERGE_MSG but this turns out to be part of the process:
+
+<br>
+<img src="documentation/images/11_merge_msg.webp">
+<br>
+
+Also I didn't make pull requests in github as I believed that github automatically did this - which had a knock on effect for pulling from my branch and the main wasn't aligned with my new branch.
+
+
+
+<br>
+</details>
+
+
+## Defensive Design
+
+CSRF : Cross-Site Request Forgery
+
+
+
+## Future Features
+
+
+# Testing
+
+
+[BACK TO TOP](#contents)
+
+<br>
+<a class="top-link hide" href="#top">↑</a>
+<a name="top"></a>
+
+
