@@ -8,7 +8,7 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
 <br>
 <hr>
 
-
+Testing to see git merge
 
 <p align="center">
   <a href="https://github.com/MartinCowey">
