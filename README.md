@@ -8,37 +8,7 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
 <br>
 <hr>
 
- <!-- Google Fonts CSS -->
-<link rel="preconnect" href="https://fonts.gstatic.com">    
-<link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
-<style>
-h2 {
-    color: #fcc58e;
-    font-family: "Red Hat Display", serif;
-    font-size: 20px;
-}
-
-/* Style the button */
-.top-link {
-  transition:       all .25s ease-in-out;
-  position:         fixed;
-  bottom:           0;
-  right:            0;
-  display:          inline-flex;
-  color:            #000000;
-
-  cursor:           pointer;
-  align-items:      center;
-  justify-content:  center;
-  margin:           0 2em 2em 0;
-  border-radius:    25%;
-  padding:          .25em;
-  width:            2em;
-  height:           2em;
-  background-color: #fcc58e;
-}
-</style>
 
 <p align="center">
   <a href="https://github.com/MartinCowey">
@@ -368,8 +338,6 @@ CSRF : Cross-Site Request Forgery
 
 [BACK TO TOP](#contents)
 
-<br>
-<a class="top-link hide" href="#top">↑</a>
-<a name="top"></a>
+
 
 
