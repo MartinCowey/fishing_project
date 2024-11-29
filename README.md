@@ -237,6 +237,52 @@ Then for merging use: switch to the main - `git checkout main`, pull the changes
 <img src="documentation/images/08_branch.webp">
 <br>
 
+### Server Error (500)
+
+Part 1
+
+Heroku threw up an early bug after I had made some changes to my views and changing the index.html to base.html. 
+My first error was for `DISABLE_COLLECTSTATIC=1` and couldn't perform the Build:
+
+Error: Unable to generate Django static files.
+ !     
+ !     The 'python manage.py collectstatic --noinput' Django
+ !     management command to generate static files failed.
+ !     
+ !     See the traceback above for details.
+ !     
+ !     You may need to update application code to resolve this error.
+ !     Or, you can disable collectstatic for this application:
+ !     
+ !        $ heroku config:set DISABLE_COLLECTSTATIC=1
+ !     
+ !     https://devcenter.heroku.com/articles/django-assets
+
+This was after changing me DEBUG to DEBUG = ‘DEBUG’ in os.environ
+However looking at the *view logs* there was another error for 'comments'. This was due to adding the comments register in admin...before I had setup the model for it:
+```
+from django.contrib import admin
+from .models import Blog, Comment
+
+# Register your models here.
+admin.site.register(Blog)
+admin.site.register(Comment)
+```
+I amended this code and pushed. And then recieved a Server error 500.
+
+Part 2
+
+My first concern was the DEBUG, however I realised I had renamed my template>index.html to base.html to keep consistent with the project, and not become confusing. However I had NOT changed this in the views.py so changed it for the TemplateView:
+
+```
+class HomePage(TemplateView): 
+    """
+    Displays home page"
+    """
+    template_name = 'base.html'
+```
+
+Now when I build again the build goes through and no errors!
 
 ## Apps and Models
 
