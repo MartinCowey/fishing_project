@@ -8,7 +8,7 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
 <br>
 <hr>
 
-Testing to see git merge
+
 
 <p align="center">
   <a href="https://github.com/MartinCowey">
@@ -150,7 +150,18 @@ Add a share button to articles, allowing users to effortlessly share content on 
 
 Add a favourites button to articles, allowing users to effortlessly share content on their social media platforms, increasing the website's visibility and user engagement.
 
+## User Stories
 
+
+
+### Site Goals
+
+1. Bring the fishing community together in a wholseome way
+2. Share and discuss fishing places and experiences
+3. Create a platform for users to contribute their fishing experience
+4. Connect enthusiasts through shared experiences
+5. Give beginners the opportunity to delve into the world of fishing
+6. Allow like minded people to collect information that helps the community
 
 ## Deployment
 
