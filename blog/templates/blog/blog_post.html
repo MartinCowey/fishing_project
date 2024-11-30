@@ -1,8 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<!-- this styles the blog when loaded -->
+
 <div class="container mt-4">
-    <h1>{{ blog.title }}</h1>
+    <div class="card text-center">
+        <h1 class="card-header">{{ blog.title }}</h1>
+        <div class="card-body">
+          <h5 class="card-title">By {{ blog.author }} on {{ blog.created_on }}</h5>
+          <p class="card-text">
+            {% if blog.featured_image %}
+    <img src="{{ blog.featured_image.url }}" class="img-fluid mb-3" alt="{{ blog.title }}">
+    {% endif %}
+    
+    <div class="blog-content">
+        {{ blog.content|safe }}
+    </div>
+          </p>
+          <a href="{% url 'blog_list' %}" class="btn btn-outline-success">Back to blogs</a>
+        </div>
+      </div>
+
+    <!-- <h1>{{ blog.title }}</h1>
     <p class="text-muted">By {{ blog.author }} on {{ blog.created_on }}</p>
     
     {% if blog.featured_image %}
@@ -11,7 +31,7 @@
     
     <div class="blog-content">
         {{ blog.content|safe }}
-    </div>
+    </div> -->
     
     <hr>
     

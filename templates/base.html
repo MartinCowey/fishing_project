@@ -4,7 +4,7 @@
 <html lang="en"> 
     <head>
         <title>Fished it, Mate!</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
         <!-- Google Fonts CSS -->
         <link rel="preconnect" href="https://fonts.gstatic.com">    
@@ -14,17 +14,16 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
         <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         
         <!-- Custom CSS -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head> 
-        <body>
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="#">Fished it, Mate!</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+    <body class="d-flex flex-column h-100 main-bg">
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <a class="navbar-brand" href="{% url 'home' %}">Fished it, Mate!</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
                 </button>
               
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -82,10 +81,10 @@
       </div>
   
       <!-- Copyright -->
-      <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      <!-- <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2024 Copyright:
         <a class="text-white" href="https://github.com/users/MartinCowey">Martin Cowey</a>
-      </div>
+      </div> -->
       <!-- Copyright -->
     </footer>
     
