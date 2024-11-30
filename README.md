@@ -223,6 +223,9 @@ Now Succesfully deployed:
 
 ## Errors and Bugs
 
+Debug = True
+
+
 An error which I need reminding about...`Debug=True`. This has got me a few times, especially with the styling aspects, and always after I git push notice I didn't set back to False.
 <br>
 <img src="documentation/images/07_debug_true.webp">
@@ -283,6 +286,32 @@ class HomePage(TemplateView):
 ```
 
 Now when I build again the build goes through and no errors!
+
+
+Template issue - make sure to add {% load static %}
+
+After changing the styling for the blog_list.html from a basic page to something more interesting Into to some errors:
+
+<br>
+<img src="documentation/images/13_static_error.webp">
+<br>
+
+At first I thought this was an error with the if statement but turned out to be the {% load static %} was missing
+
+Template issue - semantic error
+
+Again I encountered some consistent error messaging throughout and this highlights a common and persisntent friend - naming the files and then using the correct naming for the connections. Here I used 'post' instead of 'blog' and it threw the page completely out. A simple correction brought me back and had an amazing sense of accomplishment when the page poaded to the new format.
+
+<br>
+<img src="documentation/images/14_naming_error.webp">
+<br>
+
+<br>
+<img src="documentation/images/15_blog_list_resolved.webp">
+<br>
+
+
+
 
 ## Apps and Models
 

@@ -1,25 +1,29 @@
-* { 
+/* * { 
     margin: 0; 
     padding: 0; 
-} 
+}  */
 
-/* body {
-    background-color: #cdd7cd;
-} */
+body {
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 120px;
+
+    
+.footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 114px;
+    } 
+}
 
 h1 {
     font-family: "Delius Swash Caps", serif;
     font-weight: 400;
     font-style: normal;
-    color: red;
+    color: #3f603f;
 }
-
-/* .navbar {
-    -webkit-box-shadow: 0 8px 6px -6px #999;
-    -moz-box-shadow: 0 8px 6px -6px #999;
-    box-shadow: 0 8px 6px -6px #999;
-
-    /* the rest of your styling */
 
 .navbar {
     background-color: #ffffff; /* Sets the navbar background to green */
@@ -40,6 +44,7 @@ h1 {
     margin-right: 20px;
 }
 
+
 .navbar-brand, .navbar-nav .nav-link {
     padding: 20px; /* Adds padding to the left of the brand logo */
     color: #3f603f ; /* Ensures navbar links are white */
@@ -51,8 +56,11 @@ h1 {
     transform: scale(1.2);
 }
 
+
 .navbar-toggler {
-    border-color: white; /* Sets the toggler border color to white */
+    /* border-color: #3f603f; Sets the toggler border color to white; */
+    margin-right: 50px;
+    z-index: 100;
 }
 
 .form-inline {
@@ -88,13 +96,10 @@ input[type="search"]::placeholder {
 }
 
 .dropdown-item:hover {
-    /* background-color: #3f603f;
-    height: 100%;
-    color: aliceblue; */
     color: #3f603f;
     opacity: 0.5;
-    /* transform: scale(1.2); */
 }
+
 
 
 /* footer */
