@@ -3,9 +3,20 @@
     padding: 0; 
 }  */
 
-/* body {
-    background-color: #cdd7cd; hello
-} */
+body {
+    height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 120px;
+
+    
+.footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 114px;
+    } 
+}
 
 h1 {
     font-family: "Delius Swash Caps", serif;
@@ -44,6 +55,7 @@ h1 {
     opacity: 0.5;
     transform: scale(1.2);
 }
+
 
 .navbar-toggler {
     /* border-color: #3f603f; Sets the toggler border color to white; */
@@ -87,6 +99,7 @@ input[type="search"]::placeholder {
     color: #3f603f;
     opacity: 0.5;
 }
+
 
 
 /* footer */
