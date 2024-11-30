@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>Welcome to Fished it, Mate!</h1>
-    <p>This is the home page where you can add images and other content.</p>
-    
-    <!-- Add your images or other content here -->
-    
+
+<div class="container w-75 p-3">
+<div class="jumbotron shadow-lg p-3 mb-5 bg-body rounded">
+    <h1 class="display-4 text-center">Welcome to</h1>
+    <img class="logo-image mw-100" src="static/images/05_logo_fish_B.webp" alt="logo-image">
+    <p class="lead"></p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
 </div>
 {% endblock %}

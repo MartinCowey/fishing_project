@@ -11,7 +11,7 @@
           <h5 class="card-title">By {{ blog.author }} on {{ blog.created_on }}</h5>
           <p class="card-text">
             {% if blog.featured_image %}
-    <img src="{{ blog.featured_image.url }}" class="img-fluid mb-3" alt="{{ blog.title }}">
+    <img src="{{ blog.featured_image.url }}" class="img-fluid mb-3 shadow-lg mb-5 bg-body rounded" alt="{{ blog.title }}">
     {% endif %}
     
     <div class="blog-content">

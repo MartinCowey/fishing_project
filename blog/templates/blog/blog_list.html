@@ -14,9 +14,9 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in blog.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default_fishing.jpg' %}" alt="placeholder image">
+                                <img class="card-img-top shadow-lg mb-5 bg-body rounded" src="{% static 'images/default_fishing.jpg' %}" alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ blog.featured_image.url }}" alt="{{ blog.title }}">
+                                <img class="card-img-top shadow-lg mb-5 bg-body rounded" src=" {{ blog.featured_image.url }}" alt="{{ blog.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ blog.author }}</p>

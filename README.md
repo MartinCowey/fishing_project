@@ -78,16 +78,68 @@ I chose 2 fonts for the contrast. The first and main being Red Hat, which will b
 ### Wireframes
 
 #### Desktop
-
+<br>
 <details><summary>Home</summary>
-<img src="">
+<img src="documentation/Wireframes/Wireframe_desktop_home.webp">
 </details>
+<details><summary>Blogs</summary>
+<img src="documentation/Wireframes/Wireframe_desktop_blogs.webp">
+</details>
+<details><summary>Post Detail</summary>
+<img src="documentation/Wireframes/Wireframe_desktop_post.webp">
+</details>
+<details><summary>Comments</summary>
+<img src="documentation/Wireframes/Wireframe_desktop_comment.webp">
+</details>
+<details><summary>Profile</summary>
+<img src="documentation/Wireframes/Wireframe_desktop_profile.webp">
+</details>
+<br>
+
+#### Tablet
+
+<br>
+<details><summary>Home</summary>
+<img src="documentation/Wireframes/Wireframe_tablet_home1.webp">
+</details>
+<details><summary>Home Dropdown</summary>
+<img src="documentation/Wireframes/Wireframe_tablet_home2.webp">
+</details>
+<details><summary>Blogs</summary>
+<img src="documentation/Wireframes/Wireframe_tablet_blogs.webp">
+</details>
+<details><summary>Post Detail</summary>
+<img src="documentation/Wireframes/Wireframe_tablet_post.webp">
+</details>
+<details><summary>Comments</summary>
+<img src="documentation/Wireframes/Wireframe_tablet_comments.webp">
+</details>
+<details><summary>Profile</summary>
+<img src="documentation/Wireframes/Wireframe_tablet_profile.webp">
+</details>
+<br>
 
 #### Mobile
 
 <details><summary>Home</summary>
-<img src="">
+<img src="documentation/Wireframes/Wireframe_mobile_home1.webp">
 </details>
+<details><summary>Home Dropdown</summary>
+<img src="documentation/Wireframes/Wireframe_mobile_home2.webp">
+</details>
+<details><summary>Blogs</summary>
+<img src="documentation/Wireframes/Wireframe_mobile_blogs.webp">
+</details>
+<details><summary>Post Detail</summary>
+<img src="documentation/Wireframes/Wireframe_mobile_post.webp">
+</details>
+<details><summary>Comments</summary>
+<img src="documentation/Wireframes/Wireframe_mobile_comments.webp">
+</details>
+<details><summary>Profile</summary>
+<img src="documentation/Wireframes/Wireframe_mobile_profile.webp">
+</details>
+<br>
 
 <hr>
 
@@ -222,9 +274,10 @@ Now Succesfully deployed:
 <hr>
 
 ## Errors and Bugs
-
-Debug = True
-
+<br>
+<details>
+<summary>Debug = True</summary>
+<br>
 
 An error which I need reminding about...`Debug=True`. This has got me a few times, especially with the styling aspects, and always after I git push notice I didn't set back to False.
 <br>
@@ -239,8 +292,11 @@ Then for merging use: switch to the main - `git checkout main`, pull the changes
 <br>
 <img src="documentation/images/08_branch.webp">
 <br>
-
-### Server Error (500)
+</details>
+<br>
+<details>
+<summary>Server Error (500)</summary>
+<br>
 
 Part 1
 
@@ -286,9 +342,12 @@ class HomePage(TemplateView):
 ```
 
 Now when I build again the build goes through and no errors!
+</details>
+<br>
 
-
-Template issue - make sure to add {% load static %}
+<details>
+<summary>Template issue - make sure to add {% load static %}</summary>
+<br>
 
 After changing the styling for the blog_list.html from a basic page to something more interesting Into to some errors:
 
@@ -297,20 +356,28 @@ After changing the styling for the blog_list.html from a basic page to something
 <br>
 
 At first I thought this was an error with the if statement but turned out to be the {% load static %} was missing
+</details>
+<br>
 
-Template issue - semantic error
+<details>
+<summary>Template issue - semantic error</summary>
+<br>
 
 Again I encountered some consistent error messaging throughout and this highlights a common and persisntent friend - naming the files and then using the correct naming for the connections. Here I used 'post' instead of 'blog' and it threw the page completely out. A simple correction brought me back and had an amazing sense of accomplishment when the page poaded to the new format.
 
 <br>
 <img src="documentation/images/14_naming_error.webp">
 <br>
+<br>
+<img src="documentation/images/14_naming_error2.webp">
+<br>
 
 <br>
 <img src="documentation/images/15_blog_list_resolved.webp">
 <br>
 
-
+</details>
+<br>
 
 
 ## Apps and Models
