@@ -64,6 +64,25 @@ Table of Contents ::
 
 ### Colour Scheme
 
+The colour scheme is relatively simple for this: Looking at greens for nature and fishing. A nice deeper earthy green that gives a sense of calm. Also a simple white background to keep this clean and less cluttered, to give ease of viewing for the content.
+
+
+<p align="center">
+Webste - text and background
+<br>
+<img src="documentation/images/17_colour_checker_web.webp">
+<br>
+  </p>
+</p>
+
+<p align="center">
+Logo
+<br>
+<img src="documentation/images/16_colour_checker_logo.webp">
+<br>
+  </p>
+</p>
+
 
 ### Fonts
 
