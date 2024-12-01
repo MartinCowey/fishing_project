@@ -22,5 +22,8 @@ class Blog(models.Model):
     featured_image = CloudinaryField('image')
     status = models.IntegerField(choices=STATUS_CHOICES, default=0)
 
+ 
+    class Meta:
+        ordering = ["-created_on"]
     def __str__(self):
-        return self.title
+        return f"{self.title} was written by {self.author}"
