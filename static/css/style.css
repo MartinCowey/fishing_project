@@ -50,17 +50,26 @@ h1 {
     color: #3f603f ; /* Ensures navbar links are white */
 }
 
+/*navbar toggler*/
+
 .hover:hover {
     color: #3f603f;
     opacity: 0.5;
-    transform: scale(1.2);
+    text-decoration: underline;
+    /* or */
+    /* background-color: rgba(63, 96, 63, 0.1); */
 }
 
-
 .navbar-toggler {
-    /* border-color: #3f603f; Sets the toggler border color to white; */
+    border: 0px;
     margin-right: 50px;
-    z-index: 100;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(63, 96, 63, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .form-inline {
@@ -100,6 +109,31 @@ input[type="search"]::placeholder {
     opacity: 0.5;
 }
 
+/*Blog post */
+a {
+    text-decoration: none;
+    color: #3f603f;
+}
+
+.post-link {
+    color: #3f603f;
+    text-decoration: none;
+}
+
+.post-link:hover {
+    color: #3f603f;
+    opacity: 0.7;
+}
+
+.pagination .page-link {
+    color: #3f603f;
+    text-decoration: none;
+}
+
+.pagination .page-link:hover {
+    color: #3f603f;
+    opacity: 0.7;
+} 
 
 
 /* footer */
