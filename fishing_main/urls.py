@@ -21,6 +21,7 @@ from blog.views import my_blog
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('summernote/', include('django_summernote.urls')),
     path('', blog_views.home_page, name='home'),  # Add this line for the home page
     path('blog/', include('blog.urls')),  # Explicitly include blog URLs
     path('comments/', include('comments.urls')),

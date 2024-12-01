@@ -178,6 +178,11 @@ The User model is an integral component of Django Allauth, featuring pre-establi
 
 The Blog Model is the basis of providing valuable information for the user to act like a diary or log, but also being viewable to other users create a source of  information for new venues or fishing experiences to take on board and try.
 
+First we went through the process for admin then added sumernote to give more flexibility towards the admin page and filtering blogs and a more intuitive GUI:
+
+<img src="documentation/images/18_admin_filter.webp">
+
+
 ### Comment Model
 
 The Comment Model gives the user the opportunity to get involved with other users posts - making it more interactive and community based. The ability to make a log for your own expereince is great but being able to share exepriences and contribute to other peoples fishing experience is a valuable piece of the website.
