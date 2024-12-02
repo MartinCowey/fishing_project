@@ -71,11 +71,26 @@
                       {% endif %}
                  </ul>
                   <form class="d-flex ms-auto pr-2">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder=" Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                   </form>
                 </div>
               </nav>
+              <!-- displaying Django messages -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      {% for message in messages %}
+      <div class="alert {{ message.tags }} alert-dismissible
+        fade show" id="msg" role="alert">
+        {{ message | safe }}
+        <button type="button" class="btn-close"
+          data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
             
 <main>
    
