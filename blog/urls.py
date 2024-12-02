@@ -1,7 +1,7 @@
-from . import views
 from django.urls import path
+from .views import BlogList, blog_post
 
-urlpatterns = [ 
-    path('', views.blog_list, name='blog_list'),  # This will show the list of blogs at /blog/
-    path('<slug:slug>/', views.blog_post, name='blog_post'),  # This will show individual blog posts
+urlpatterns = [
+    path('', BlogList.as_view(), name='blog_list'),
+    path('<slug:slug>/', blog_post, name='blog_post'),
 ]
