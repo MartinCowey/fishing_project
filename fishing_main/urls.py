@@ -20,6 +20,7 @@ from blog import views as blog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("accounts/", include("allauth.urls")),
     path('summernote/', include('django_summernote.urls')),
     path('', blog_views.home_page, name='home'),  # Add this line for the home page
     path('blog/', include('blog.urls')),  # Explicitly include blog URLs
