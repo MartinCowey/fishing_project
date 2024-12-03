@@ -7,8 +7,12 @@ body {
     height: 100vh;
     padding-top: 100px;
     padding-bottom: 120px;
+}
 
-    
+.font-red-hat {
+    font-family: 'Red Hat Display', Times, serif;
+}
+
 .footer {
       position: absolute;
       left: 0;
@@ -16,7 +20,7 @@ body {
       width: 100%;
       height: 114px;
     } 
-}
+
 
 h1 {
     font-family: "Delius Swash Caps", serif;
@@ -72,6 +76,18 @@ h1 {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(63, 96, 63, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
+/* icon styling */
+
+.fish-icon {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.fish-blurb {
+    padding: 50px;
+}
+
+
 .form-inline {
     display: flex;
     justify-content: flex-end; /* Aligns search form to the right */
@@ -89,8 +105,7 @@ input[type="search"]::placeholder {
 .form-control {
     border-radius: 25px;
     margin-right: 5px; /* Adds space between input and button */
-    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
-}
+    }
 
 
 .btn-outline-success {
@@ -135,6 +150,11 @@ a {
     opacity: 0.7;
 } 
 
+/* comments */
+
+.approval {
+    color: #e89483;
+}
 
 /* footer */
 .container-fluid {
