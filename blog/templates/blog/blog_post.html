@@ -98,7 +98,7 @@
     </div>
   </div>
   <!-- Creating New Comments -->
-  <div class="col-md-4 card mb-4 mt-3">
+  <div class="col-md-4 card mb-4 mt-3 card-bord">
     <div class="card-body">
       {% if user.is_authenticated %}
       <h3 class="font-red-hat">Leave a comment:</h3>
@@ -130,14 +130,15 @@
           data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Are you sure you want to delete your comment?
+        Are you sure you want to delete your comment? <br>
+        Like the time you told everyone about your favourite fishing venue...
         This action cannot be undone.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
+        <button type="button" class="btn btn-outline-success"
           data-bs-dismiss="modal">Close</button>
         <a id="deleteConfirm" href="#" class="btn
-          btn-danger">Delete</a>
+        btn-danger-round">Delete</a>
       </div>
     </div>
   </div>
