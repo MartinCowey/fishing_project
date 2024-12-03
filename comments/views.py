@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404, reverse
 from .models import Comment
 from blog.models import Blog
 from .forms import CommentForm
+from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 def add_comment(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
@@ -11,7 +13,29 @@ def add_comment(request, slug):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.author = request.user
-            comment.post = blog
+            comment.blog = blog
             comment.save()
-            return redirect('blog_detail', slug=blog.slug)
-    return redirect('blog_detail', slug=blog.slug)
+            
+    return redirect('blog_post', slug=blog.slug)
+
+def comment_edit(request, slug, comment_id):
+    """
+    view to edit comments
+    """
+    if request.method == "POST":
+
+        queryset = Blog.objects.filter(status=1)
+        blog = get_object_or_404(queryset, slug=slug)
+        comment = get_object_or_404(Comment, pk=comment_id)
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid() and comment.author == request.user:
+            comment = comment_form.save(commit=False)
+            comment.blog = blog
+            comment.approved = False
+            comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+
+    return HttpResponseRedirect(reverse('blog_post', args=[slug]))

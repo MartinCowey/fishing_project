@@ -85,6 +85,11 @@
           Currently out fishing and will get approved when we get back
         </p>
         {% endif %}
+        {% if user.is_authenticated and comment.author == user %}
+  <button class="btn btn-edit"
+    comment_id="{{ comment.id }}">Edit</button>
+    
+  {% endif %}
       </div>
       <!-- Our for loop ends here -->
       {% endfor %}
@@ -112,3 +117,8 @@
 
 </div>
 {% endblock content %}
+
+{% block extras %}
+<script>const blogSlug = "{{ blog_slug }}";</script>
+<script src="{% static 'js/comments.js' %}"></script>
+{% endblock %}

@@ -403,6 +403,14 @@ Again I encountered some consistent error messaging throughout and this highligh
 </details>
 <br>
 
+AllAuth error - lost </form> end tag which threw the whole site off when trying to linnk the login/logout/signup functionality. Base.html had a missing end tag for the form so it was acting like a GET request rather than a POST request.
+
+
+Edit comments - mismatch error. Due to separating the apps the connetion need some javascript but the link didn't match and needed changing in the javascript code.
+
+
+
+
 
 ## Apps and Models
 
