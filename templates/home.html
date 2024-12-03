@@ -4,23 +4,62 @@
 
 <div class="container w-75 p-3">
 <div class="jumbotron shadow-lg p-3 mb-5 bg-body rounded">
-    <h1 class="display-4 text-center font-red-hat">Welcome to</h1>
+    <!-- <h1 class="display-4 text-center font-red-hat mb-5 mt-4">Welcome to</h1> -->
     <img class="logo-image mw-100" src="static/images/05_logo_fish_B.webp" alt="logo-image">
-    <p class="lead"></p>
+    <p class="lead mb-5"></p>
     <hr class="my-4">
     <p>Welcome to Fished it, Mate!, a community-driven blog dedicated to all fishing enthusiasts! Whether you're a seasoned angler or just starting out, this platform is designed for like-minded individuals who share a passion for fishing. Here, we celebrate the joys of casting lines, reeling in catches, and sharing our unique experiences on the water.
       Our blog is a gathering place for stories, tips, and discussions about everything related to fishing. From the thrill of the catch to the serenity of the great outdoors, we invite you to explore our posts and connect with fellow fishing lovers. Each article is crafted with care, offering insights into various fishing locations, types of fish caught, and methods used by our community members.
       How It Works
       At Fished it, Mate!, we believe in making information accessible and engaging. Here's how you can navigate our blog:</p>
-      <p><strong>Location: </strong>Search for articles based on specific fishing locations. Discover hidden gems and popular spots shared by fellow anglers.</p>
-      <hr>
-      <p><strong>Type of Fish Caught: </strong>Looking for tips on catching a particular species? Use our search feature to find posts that focus on your favorite fish.</p>
-      <hr>
-      <p><strong>Fishing Method Used: </strong>Whether you prefer fly fishing, deep-sea fishing, or shore casting, you can filter content based on the methods that interest you most.</p>
-      <hr>
+
+      <div class="jumbotron ">
+        <div class="container fish-blurb">
+          <div class="row">
+          <div class="col-md-2 inline text-center">
+            <img aria-hidden='true' class="fish-icon" src="static/images/01_icon_location.png" alt="location-icon" width="55px">
+            </div>
+            <div class="col-md-10">
+         <strong>Location: </strong>Search for articles based on specific fishing locations. Discover hidden gems and popular spots shared by fellow anglers.
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+      <div class="jumbotron ">
+        <div class="container fish-blurb">
+          <div class="row">
+          <div class="col-md-2 inline text-center">
+            <img aria-hidden='true' class="fish-icon" src="static/images/05_icon_fish.png" alt="fish-icon" width="55px">
+            </div>
+            <div class="col-md-10">
+              <strong>Type of Fish Caught: </strong>Looking for tips on catching a particular species? Use our search feature to find posts that focus on your favorite fish.
+          </div>
+        </div>
+        </div>
+      </div>
+      
+      
+
+      <div class="jumbotron ">
+        <div class="container fish-blurb">
+          <div class="row">
+          <div class="col-md-2 inline text-center">
+            <img aria-hidden='true' class="fish-icon" src="static/images/06_icon_reel.png" alt="reel-icon" width="55px">
+            </div>
+            <div class="col-md-10">
+              <strong>Fishing Method Used: </strong>Whether you prefer fly fishing, deep-sea fishing, or shore casting, you can filter content based on the methods that interest you most.
+          </div>
+        </div>
+        </div>
+      </div>
+
+  
+      <div>
       Join us in celebrating the art of fishing! Share your stories, learn from others, and contribute to a vibrant community that values the beauty of nature and the thrill of the catch. Happy fishing!</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <p class="lead text-center">
+      <a class="btn btn-outline-success mt-3" href="{% url 'blog_list' %}" role="button">Blog posts</a>
     </p>
   </div>
 </div>
