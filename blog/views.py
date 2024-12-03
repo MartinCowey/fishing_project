@@ -45,6 +45,7 @@ def blog_post(request, slug):
 
     return render(request, 'blog/blog_post.html', {
         'blog': blog,
+        'blog_slug': blog.slug,
         'comments': comments,
         'comment_form': comment_form,
         'comment_count': comment_count,
