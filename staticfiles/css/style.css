@@ -156,6 +156,10 @@ a {
     color: #e89483;
 }
 
+.card-bord {
+    border: none;
+}
+
 /* footer */
 .container-fluid {
 width: 100%;
@@ -164,3 +168,24 @@ width: 100%;
 margin-right: auto;
 margin-left: auto;
 }
+
+/* modal */
+
+.model-dialog {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+color: #3f603f;
+border-radius: .9rem;
+}
+
+.btn-danger-round {
+    background-color: #e89483;
+    border-radius: 25px;
+}
+
+@media only screen and (max-width: 500px){
+    .modal-dialog{ width: 85% !important; }
+}
+
