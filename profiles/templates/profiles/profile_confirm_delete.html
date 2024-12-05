@@ -1,17 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <!-- profiles/templates/profiles/profile_confirm_delete.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Profile Confirmation</title>
+    <!-- <title>Delete Profile Confirmation</title> -->
 </head>
 <body>
-    <h1>Are you sure you want to delete {{ profile.user.username }}'s profile? Off into the wilderness to fish alone?</h1>
+    <!-- <h1>Are you sure you want to delete {{ profile.user.username }}'s profile? Off into the wilderness to fish alone?</h1>
     <form method="post">
         {% csrf_token %}
-        <button type="submit">Confirm Delete</button>
+        <button type="submit btn-outline-success">Confirm Delete</button>
     </form>
-    <a href="{% url 'profile_detail' profile.slug %}">Cancel</a>
+    <a href="{% url 'profile_detail' profile.slug %}">Cancel</a> -->
+
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card shadow-card p-3 font-red-hat">
+            <div class="card-body text-center p-3 ">
+                <h1 class="card-title font-red-hat">Delete Profile Confirmation</h1>
+                
+                <hr>
+                <h3>WARNING!</h3>
+                <hr>
+                <p>Are you sure you want to delete {{ profile.user.username }}'s profile? Off into the wilderness to fish alone?</p>
+                <hr>
+                <form method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-danger-round m-2" type="submit">Confirm Delete</button>
+                </form>
+                <a href="{% url 'profile_detail' profile.slug %}" class="btn btn-outline-success m-2">Cancel</a>
+            </div>
+            <hr>
+            
+          </div>
+        </div>
+
 </body>
 </html>
+
+{% endblock %}

@@ -1,18 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <!-- profiles/templates/profiles/profile_form.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Profile</title>
+    <!-- <title>Create Profile</title> -->
 </head>
 <body>
-    <h1>Create Profile</h1>
+    <!-- <h1>Create Profile</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save Profile</button>
     </form>
-    <a href="{% url 'home' %}">Cancel</a>  <!-- Redirect to home or another appropriate page -->
+    <a href="{% url 'home' %}">Cancel</a>  Redirect to home or another appropriate page -->
+
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card shadow-card p-3">
+            <div class="card-body text-center p-3 ">
+                <h2 class="card-title ">Create Profile</h2>
+                <br>
+                <hr>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn-outline-success" type="submit">Save Profile</button>
+                </form>
+                <a href="{% url 'home' %}" class="btn btn-danger-round m-2">Cancel</a>  <!-- Redirect to home or another appropriate page -->
+            </div>
+            <hr>
+            
+          </div>
+        </div>
+
 </body>
+
 </html>
+
+{% endblock %}
