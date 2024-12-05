@@ -1,0 +1,19 @@
+<!-- profiles/templates/profiles/profile_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ profile.user.username }}'s Profile</title>
+</head>
+<body>
+    <h1>{{ profile.user.username }}'s Profile</h1>
+    <img src="{{ profile.profile_pic.url }}" alt="{{ profile.user.username }}'s Profile Picture">
+    <p><strong>Bio:</strong> {{ profile.bio }}</p>
+    <p><strong>Favourite Fish:</strong> {{ profile.favourite_fish.name }}</p>
+    <p><strong>Favourite Fishing Method:</strong> {{ profile.favourite_fishing.name }}</p>
+    <a href="{% url 'profile_edit' user.profile.slug %}">Edit Profile</a>
+    <a href="{% url 'profile_delete' profile.slug %}">Delete Profile</a>
+</body>
+</html>
+
