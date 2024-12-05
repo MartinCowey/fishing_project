@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'blog',
     'comments',
     'profiles',
+    'widget_tweaks',
 ]
 
 SITE_ID = 1 
