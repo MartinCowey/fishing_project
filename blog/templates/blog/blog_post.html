@@ -72,11 +72,16 @@
         {% if not comment.approved and comment.author == user %}
         faded{% elif not comment.approved %} d-none {% endif %}">
         <p class="font-weight-bold">
-          {{ comment.author }}
+          {% if comment.author.profile and comment.author.profile.slug %}
+            <a href="{% url 'profile_detail' comment.author.profile.slug %}">{{ comment.author }}</a>
+          {% else %}
+            {{ comment.author }}
+          {% endif %}
           <span class="font-weight-normal">
             {{ comment.created_on }}
           </span> wrote:
         </p>
+
         <div id="comment{{ comment.id }}">
           {{ comment.body | linebreaks }}
         </div>
