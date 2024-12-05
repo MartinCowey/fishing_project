@@ -1,17 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
+    <!-- <title>Edit Profile</title> -->
 </head>
-<body>
+<!-- <body>
     <h1>Edit Profile</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Update Profile</button>
+        <button class="btn-outline-success" type="submit">Update Profile</button>
     </form>
     <a href="{% url 'profile_detail' user.profile.slug %}">Cancel</a>
-</body>
+</body> -->
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card shadow-card p-3">
+        <div class="card-body text-center p-3 font-red-hat">
+            <h2 class="card-title ">Edit Profile</h2>
+            <br>
+            <hr>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn-outline-success m-2" type="submit">Update Profile</button>
+            </form>
+            <a href="{% url 'profile_detail' user.profile.slug %}" class="btn btn-danger-round m-2">Cancel</a>
+        </div>
+        <hr>
+        
+      </div>
+    </div>
+
 </html>
+
+
+    {% endblock %}
