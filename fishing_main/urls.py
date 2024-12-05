@@ -25,4 +25,5 @@ urlpatterns = [
     path('', blog_views.home_page, name='home'),  # Add this line for the home page
     path('blog/', include('blog.urls')),  # Explicitly include blog URLs
     path('comments/', include('comments.urls')),
+    path('profiles/', include('profiles.urls')),
 ]

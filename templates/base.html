@@ -56,7 +56,10 @@
                     <!-- <li class="nav-item">
                       <a class="nav-link disabled" href="#">Disabled</a>
                     </li> -->
-                    {% if user.is_authenticated %}
+
+<!-- OLD NAV LINKS FOR LOG IN REGISTER ETD -->
+
+                    <!-- {% if user.is_authenticated %}
                       <li class="nav-item">
                           <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                       </li>
@@ -69,7 +72,30 @@
                           <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
                       </li>
                       {% endif %}
-                 </ul>
+                 </ul> -->
+
+                 <!-- updated login register for the profile -->
+                 {% if user.is_authenticated %}
+                 <li class="nav-item">
+                     {% if user.profile %}
+                         <a class="nav-link" href="{% url 'profile_detail' user.profile.slug %}">Profile</a>
+                     {% else %}
+                         <a class="nav-link" href="{% url 'profile_create' %}">Create Profile</a>
+                     {% endif %}
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                 </li>
+             {% else %}
+                 <li class="nav-item">
+                     <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                 </li>
+             {% endif %}
+
+
                   <form class="d-flex ms-auto pr-2">
                     <input class="form-control me-2" type="search" placeholder=" Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
@@ -135,3 +161,5 @@
     {% endblock %}
         </body> 
     </html>
+
+    

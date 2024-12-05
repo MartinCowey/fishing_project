@@ -50,4 +50,3 @@ def blog_post(request, slug):
         'comment_form': comment_form,
         'comment_count': comment_count,
     })
-
