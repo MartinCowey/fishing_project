@@ -185,6 +185,29 @@ border-radius: .9rem;
     border-radius: 25px;
 }
 
+.btn-danger-round:hover {
+    background-color: #c32b0d;
+    border-radius: 25px;
+}
+
+/* profile */
+
+    .profile-container {
+        min-height: 100vh;
+    }
+
+    .shadow-card {
+        -webkit-box-shadow: 0 8px 6px -6px #999;
+        -moz-box-shadow: 0 8px 6px -6px #999;
+        box-shadow: 0 8px 6px -6px #999;
+    }
+    .card-img-top {
+        width: 100%;
+        height: 200px; /* Adjust as needed */
+        object-fit: cover;
+    }
+
+
 @media only screen and (max-width: 500px){
     .modal-dialog{ width: 85% !important; }
 }
