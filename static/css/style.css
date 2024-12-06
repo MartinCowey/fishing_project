@@ -130,6 +130,18 @@ a {
     color: #3f603f;
 }
 
+.blog-list:hover {
+    border-color: #3f603f;
+    -webkit-box-shadow: 0 0 0px 12px 3px #999;
+     -moz-box-shadow: 0 0 0px 12px 3px #999;
+    box-shadow: 0 0px 12px 3px #999;
+    transform:scale(1.02);
+}
+
+.blog-list {
+    transition: all .3s;
+}
+
 .post-link {
     color: #3f603f;
     text-decoration: none;
