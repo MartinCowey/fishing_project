@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from .models import Blog
+from django.db.models import Q
+from .models import Blog, TypeOfFish, TypeOfFishing
 from .forms import CommentForm, BlogForm
 from comments.forms import CommentForm
 from django.contrib import messages
@@ -16,6 +17,39 @@ class HomePage(TemplateView):
     """
     template_name = 'base.html'
 
+class BlogSearchView(ListView):
+    model = Blog
+    template_name = 'blog/blog_search.html'
+    context_object_name = 'blogs'
+    paginate_by = 6
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        fish_type = self.request.GET.get('fish')
+        fishing_method = self.request.GET.get('method')
+
+        queryset = Blog.objects.filter(status=1)
+
+        if query:
+            queryset = queryset.filter(
+                Q(title__icontains=query) |
+                Q(content__icontains=query) |
+                Q(author__username__icontains=query)
+            )
+
+        if fish_type:
+            queryset = queryset.filter(favourite_fish__name=fish_type)
+
+        if fishing_method:
+            queryset = queryset.filter(favourite_fishing__name=fishing_method)
+
+        return queryset.distinct()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['fish_types'] = TypeOfFish.objects.all()  # Fetch all fish types
+        context['fishing_methods'] = TypeOfFishing.objects.all()  # Fetch all fishing methods
+        return context
 
 class BlogList(ListView):
     queryset = Blog.objects.filter(status=1)
