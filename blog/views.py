@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 from .models import Blog
-from .forms import CommentForm
+from .forms import CommentForm, BlogForm
 from comments.forms import CommentForm
 from django.contrib import messages
 
@@ -20,6 +22,22 @@ class BlogList(ListView):
     template_name = "blog/blog_list.html"
     paginate_by = 6
     context_object_name = 'blogs'
+
+class BlogCreateView(LoginRequiredMixin, CreateView):
+    model = Blog
+    form_class = BlogForm
+    template_name = 'blog/blog_form.html'
+    success_url = reverse_lazy('blog_list')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+class BlogUpdateView(LoginRequiredMixin, UpdateView):
+    model = Blog
+    form_class = BlogForm
+    template_name = 'blog/blog_form.html'
+    success_url = reverse_lazy('blog_list')
 
 def home_page(request):
     return render(request, 'home.html')  # This will render the home.html template

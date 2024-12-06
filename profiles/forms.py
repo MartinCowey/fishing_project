@@ -8,3 +8,4 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['bio', 'profile_pic', 'favourite_fish', 'favourite_fishing']
+

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from profiles.models import TypeOfFish, TypeOfFishing
 
 # Create your models here.
 
@@ -21,10 +22,13 @@ class Blog(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     featured_image = CloudinaryField('image')
     status = models.IntegerField(choices=STATUS_CHOICES, default=0)
+    favourite_fish = models.ForeignKey(TypeOfFish, on_delete=models.SET_NULL, null=True, blank=True)
+    favourite_fishing = models.ForeignKey(TypeOfFishing, on_delete=models.SET_NULL, null=True, blank=True)
 
  
     class Meta:
         ordering = ["-created_on"]
+
     def __str__(self):
         return f"{self.title} was written by {self.author}"
 
