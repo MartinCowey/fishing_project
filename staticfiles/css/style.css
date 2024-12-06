@@ -29,6 +29,7 @@ h1 {
     color: #3f603f;
 }
 
+
 .navbar {
     background-color: #ffffff; /* Sets the navbar background to green */
     color: #3f603f; /* Sets the text color to white */
@@ -162,10 +163,24 @@ a {
     opacity: 0.7;
 } 
 
-/* comments */
-
 .approval {
     color: #e89483;
+}
+
+.message-background {
+    background-color: #e89483; 
+    color: #182518;
+    /* border: 1px solid #ccc;
+    -webkit-box-shadow: 0 0 0px 12px 3px #999;
+     -moz-box-shadow: 0 0 0px 12px 3px #999;
+    box-shadow: 0 0px 12px 3px #999; */
+}
+
+.message-background:hover {
+    -webkit-box-shadow: 0 0 0px 12px 3px #999;
+     -moz-box-shadow: 0 0 0px 12px 3px #999;
+    box-shadow: 0 0px 12px 3px #999;
+    transform:scale(1.02);
 }
 
 .card-bord {

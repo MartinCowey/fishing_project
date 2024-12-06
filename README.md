@@ -93,6 +93,19 @@ The font used in this project
 <br>
 I chose 2 fonts for the contrast. The first and main being Red Hat, which will be used for most of the project.
 
+in terms of font colour : my main colour against white background would be the 
+
+however to maximise again the slamon colour background for messages I needed to darken the green to: 182518
+<br>
+<img src="documentation/images/19_font_colour.webp">
+<br>
+
+as the normal font colour wasn't passing the contrast checker:
+
+<br>
+<img src="documentation/images/20_font_colour.webp">
+<br>
+
 
 ### Wireframes
 
