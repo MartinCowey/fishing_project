@@ -167,7 +167,7 @@ a {
 .toast {
     -webkit-box-shadow: 0 0 0px 12px 3px #999;
      -moz-box-shadow: 0 0 0px 12px 3px #999;
-    box-shadow: 0 0px 12px 3px #999; */
+    box-shadow: 0 0px 12px 3px #999;
 }
 
 .approval {
@@ -202,6 +202,26 @@ width: 100%;
 margin-right: auto;
 margin-left: auto;
 }
+
+.foot-colour {
+    background-color: #518061;
+}
+
+/* .soc-icon {
+    background-color: #e89483;
+} */
+
+.soc-icon i {
+    font-size: 1.5em;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+.soc-icon i:hover {
+    transform: translateY(-10px);
+}
+
+
 
 /* modal */
 
