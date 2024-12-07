@@ -1,9 +1,15 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import DetailView, UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
+from allauth.account.views import SignupView  # Importing SignupView from AllAuth
 from .models import Profile
 from .forms import ProfileForm
+
+class CustomSignupView(SignupView):
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        return redirect(reverse('profile_create'))  # Redirect to profile creation page
 
 class ProfileDetailView(DetailView):
     model = Profile
