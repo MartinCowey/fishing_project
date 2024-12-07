@@ -1,27 +1,100 @@
 {% extends "base.html" %}
-
 {% load i18n %}
-
-{% block head_title %}{% trans "Signup" %}{% endblock head_title %}
+{% load static %}
 
 {% block content %}
 <div class="container">
   <div class="row">
-      <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <h3 class="font-red-hat">{% trans "Sign Up" %}</h3>
+      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button class="btn-outline-success" type="submit" id="signupButton">{% trans "Sign Up" %} &raquo;</button>
+      </form>
+      <p class="mt-3">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Read the Terms and Conditions before submitting</a>
+      </p>
+    </div>
+  </div>
+</div>
 
-
-<h3 class="font-red-hat ">{% trans "Sign Up" %}</h3>
-
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" class="approval">sign in</a>.{% endblocktrans %}</p>
-
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="btn-outline-success" type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
-
-
+<!-- Terms and Conditions Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body p-4">
+          <h2 class="text-center mb-4">Terms and Conditions</h2>
+          
+          <p class="lead">Welcome to Fished it, Mate! These Terms and Conditions outline the rules and regulations for using our website and participating in our community. By accessing or using our site, you agree to comply with these terms. If you do not agree with any part of these terms, please do not use our site. We want to keep fishing friendly and welcoming.</p>
+          
+          <div class="mb-4">
+            <h3 class="h5">1. Acceptance of Terms</h3>
+            <p>By using this website, you affirm that you are at least 18 years old or have the consent of a parent or guardian. You agree to use the website in accordance with these Terms and Conditions.</p>
+          </div>
+          
+          <div class="mb-4">
+            <h3 class="h5">2. User Conduct</h3>
+            <p>When participating in discussions, comments, or any other interactive features on our site, you agree to adhere to the following guidelines:</p>
+            <ul>
+              <li><strong>Respect Others:</strong> Treat all users with respect. Harassment, bullying, or any form of hate speech will not be tolerated.</li>
+              <li><strong>No Offensive Language:</strong> Refrain from using profanity, slurs, or any language that may be considered offensive or discriminatory.</li>
+              <li><strong>No Spam or Advertising:</strong> Do not post spam, advertisements, or promotional content without prior approval from the site administrators.</li>
+              <li><strong>Constructive Feedback:</strong> When providing feedback or criticism, ensure it is constructive and aimed at fostering a positive community.</li>
+            </ul>
+          </div>
+          
+          <div class="mb-4">
+            <h3 class="h5">3. Content Guidelines</h3>
+            <ul>
+              <li><strong>Original Content:</strong> Ensure that any content you post is original or that you have permission to share it. Plagiarism will not be tolerated.</li>
+              <li><strong>Appropriate Content:</strong> Do not post content that is obscene, defamatory, threatening, or otherwise inappropriate.</li>
+              <li><strong>Privacy:</strong> Respect the privacy of others. Do not share personal information about other users without their consent.</li>
+            </ul>
+          </div>
+          
+          <div class="mb-4">
+            <h3 class="h5">4. Moderation</h3>
+            <p>The administrators of Fished it, Mate! reserve the right to monitor all interactions on the site. We may remove any content that violates these Terms and Conditions at our discretion. Users who repeatedly violate these guidelines may have their accounts suspended or terminated.</p>
+          </div>
+          
+          <div class="mb-4">
+            <h3 class="h5">5. Limitation of Liability</h3>
+            <p>Fished it, Mate! is not responsible for any content posted by users. While we strive to maintain a respectful environment, we cannot guarantee that all interactions will adhere to these guidelines.</p>
+          </div>
+          
+          <div class="mb-4">
+            <h3 class="h5">6. Changes to Terms</h3>
+            <p>We may update these Terms and Conditions from time to time. We will notify users of any significant changes via email or through a notice on our website. Continued use of the site after changes have been made constitutes acceptance of the new terms.</p>
+          </div>
+          
+          <div class="mb-4">
+            <h3 class="h5">7. Governing Law</h3>
+            <p>These Terms and Conditions are governed by the laws of England and Wales. Any disputes arising from these terms will be resolved in accordance with UK law.</p>
+          </div>
+          
+          <div>
+            <h3 class="h5">8. Contact Information</h3>
+            <p>If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:fisheditmate@fisheditmate.com">fisheditmate@fisheditmate.com</a>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-outline-success" id="acceptAndCloseTerms">Accept</button>
+    </div>
+    </div>
+  </div>
+</div>
+{% include "toast_template.html" %}
 {% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/terms.js' %}"></script>
+{% endblock %}
