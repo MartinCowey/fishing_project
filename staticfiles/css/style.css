@@ -1,7 +1,3 @@
-/* * { 
-    margin: 0; 
-    padding: 0; 
-}  */
 
 body {
     height: 100vh;
@@ -220,7 +216,80 @@ margin-left: auto;
 .soc-icon i:hover {
     transform: translateY(-10px);
 }
+/* .waves {
+    position: relative;
+    overflow: hidden;
+    height: 100px; 
+} */
 
+.wave img {
+    position: absolute;
+    top: -19px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+/* .wave img {
+    position: absolute;
+    width: 4000px; 
+    height: 50px;  
+    animation: animateWave 10s linear infinite;
+} */
+
+/* Apply animations to the waves */
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 46s linear infinite; /* Slow movement */
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.3;
+    bottom: 0px;
+    animation: animateWave-02 38s linear infinite; /* Slow movement */
+}
+
+.wave#wave3 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 15px;
+    animation: animateWave-02 40s linear infinite; /* Faster movement */
+}
+
+.wave#wave4 {
+    z-index: 999;
+    opacity: 1;
+    bottom: 20px;
+    animation: animateWave-02 42s linear infinite; /* Faster movement */
+}
+
+/* Slower wave movement */
+@keyframes animateWave {
+    0% {
+        transform: translateX(0); /* Start at the beginning of the container */
+    }
+    50% {
+        transform: translateX(-50%); /* Move to the left by half the width of the container */
+    }
+    100% {
+        transform: translateX(0); /* Return to starting position */
+    }
+}
+
+@keyframes animateWave-02 {
+    0% {
+        transform: translateX(0); /* Start at the beginning of the container */
+    }
+    50% {
+        transform: translateX(50%); /* Move to the right by half the width of the container */
+    }
+    100% {
+        transform: translateX(0); /* Return to starting position */
+    }
+}
 
 
 /* modal */
@@ -264,5 +333,13 @@ border-radius: .9rem;
 
 @media only screen and (max-width: 500px){
     .modal-dialog{ width: 85% !important; }
+
+    .wave img {
+        position: absolute;
+        top: -9px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+    }
 }
 
