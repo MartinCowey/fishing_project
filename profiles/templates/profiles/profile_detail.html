@@ -11,17 +11,7 @@
     <!-- <title>{{ profile.user.username }}'s Profile</title> -->
 </head>
 <body>
-    <!-- <h1>{{ profile.user.username }}'s Profile</h1>
-    <img src="{{ profile.profile_pic.url }}" alt="{{ profile.user.username }}'s Profile Picture">
-    <p><strong>Bio:</strong> {{ profile.bio }}</p>
-    <p><strong>Favourite Fish:</strong> {{ profile.favourite_fish.name }}</p>
-    <p><strong>Favourite Fishing Method:</strong> {{ profile.favourite_fishing.name }}</p>
-    <a href="{% url 'profile_edit' user.profile.slug %}">Edit Profile</a>
-    <a href="{% url 'profile_delete' profile.slug %}">Delete Profile</a>
-
-<br>
-<br> -->
-
+ 
 <div class="container d-flex justify-content-center align-items-center">
     <div class="card w-75 shadow-card p-3">
         <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
@@ -38,7 +28,9 @@
         </div>
         <br>
         {% if user.is_authenticated %}
-    <a href="{% url 'blog_create' %}" class="btn btn-primary">Create Blog Post</a>
+        <a href="{% url 'blog_create' %}" class="btn btn-primary mx-auto d-block mb-3" style="max-width: 200px;" aria-label="Create a New Blog Post">
+             Create Blog Post
+        </a>
 {% endif %}
 <br>
         <hr>

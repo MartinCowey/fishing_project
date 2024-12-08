@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="card shadow-card p-3" style="max-width: 600px; width: 100%;">
+        <div class="card-body p-3">
+            <h2 class="card-title text-center font-red-hat m-5">And Away!</h2>
+            <hr>
+            <div class="text-center">
+            <p>Are you sure you want to delete the post titled</p> <p> <strong>"{{ blog.title }}"</strong>?</p>
+            <p>This cannot de undone!</p>
+        </div>
+            <form method="post" class="text-center">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger-round w-50" aria-label="Confirm Deletion">Delete</button>
+            </form>
+            <div class="mt-3 text-center">
+                <a href="{% url 'blog_post' blog.slug %}" class="btn btn-outline-success w-50" aria-label="Cancel and Return to Blog Post">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

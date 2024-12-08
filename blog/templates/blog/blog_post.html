@@ -24,13 +24,24 @@
     <img src="{{ blog.featured_image.url }}" class="img-fluid mb-3 shadow-lg mb-5 bg-body rounded" alt="{{ blog.title }}">
     {% endif %}
     
-    <div class="blog-content">
+    <div class="blog-content mb-5">
         {{ blog.content|safe }}
     </div>
           </p>
-          <a href="{% url 'blog_list' %}" class="btn btn-outline-success">Back to blogs</a>
+          
         </div>
-      </div>
+        <div>
+          <!-- Show edit and delete links only for the author of the post -->
+{% if blog.author == request.user %}
+<a href="{% url 'blog_edit' blog.slug %}" class="btn btn-outline-success m-2">Edit</a>
+<a href="{% url 'blog_delete' blog.slug %}" class="btn btn-danger-round m-2">Delete</a>
+{% endif %}
+        </div>
+        <div>
+          <a href="{% url 'blog_list' %}" class="btn btn-outline-success m-5">Back to blogs</a>
+        </div>
+
+</div>
 
 <!-- Displaying count of comments -->
 <div class="row">
