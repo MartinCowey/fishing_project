@@ -32,4 +32,9 @@ class Blog(models.Model):
     def __str__(self):
         return f"{self.title} was written by {self.author}"
 
+# Override the save method to auto-generate a slug if it's empty
+    def save(self, *args, **kwargs):
+        if not self.slug:  # Only set the slug if it's empty
+            self.slug = slugify(self.title)  # Create the slug from the title
+        super().save(*args, **kwargs)  # Call the parent class's save method
 

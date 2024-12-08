@@ -22,7 +22,9 @@
                                     <p class="author">Author: {{ blog.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'blog_post' blog.slug %}" class="post-link">
+                            <a href="{% if blog.slug and blog.slug != '' %}{% url 'blog_post' blog.slug %}{% else %}#{% endif %}" class="post-link">
+                                {{ blog.title }}
+                              </a>
                                 <h2 class="card-title">{{ blog.title }}</h2>
                                 <p class="card-text">{{blog.excerpt}}</p>
                             </a>
