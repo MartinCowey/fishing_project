@@ -73,6 +73,12 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
             return redirect('profile_form')  # Change 'profile_create' to your actual profile creation view name
         return super().dispatch(request, *args, **kwargs)
         # add a blog post<<
+    def get_form(self, form_class=None):
+            form = super().get_form(form_class)
+            form.initial['excerpt'] = 'Default excerpt'
+            form.initial['status'] = 1  # Assuming 1 is for 'Published'
+            return form
+
     def form_valid(self, form):
         form.instance.author = self.request.user
         # Ensure slug is set from the title
@@ -84,6 +90,14 @@ class BlogUpdateView(LoginRequiredMixin, UpdateView):
     form_class = BlogForm
     template_name = 'blog/blog_form.html'
     success_url = reverse_lazy('blog_list')
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        if not form.initial.get('excerpt'):
+            form.initial['excerpt'] = 'Default excerpt'
+        if not form.initial.get('status'):
+            form.initial['status'] = 1  # Assuming 1 is for 'Published'
+        return form
 
 def home_page(request):
     return render(request, 'home.html')  # This will render the home.html template
@@ -114,3 +128,35 @@ def blog_post(request, slug):
         'comment_form': comment_form,
         'comment_count': comment_count,
     })
+
+# Edit view
+def blog_edit(request, slug):
+    blog = get_object_or_404(Blog, slug=slug)
+    
+    # Ensure that the logged-in user is the author of the blog
+    if blog.author != request.user:
+        return HttpResponseForbidden("you're fishing in the wrong place...You do not have permission to edit this post.")
+    
+    if request.method == 'POST':
+        form = BlogForm(request.POST, request.FILES, instance=blog)
+        if form.is_valid():
+            form.save()
+            return redirect('blog_post', slug=blog.slug)  # Redirect to the updated post
+    else:
+        form = BlogForm(instance=blog)
+    
+    return render(request, 'blog/blog_edit.html', {'form': form, 'blog': blog})
+
+# Delete view
+def blog_delete(request, slug):
+    blog = get_object_or_404(Blog, slug=slug)
+
+    # Ensure that the logged-in user is the author of the blog
+    if blog.author != request.user:
+        return HttpResponseForbidden("you're fishing in the wrong place...You do not have permission to delete this post.")
+    
+    if request.method == 'POST':
+        blog.delete()
+        return redirect('blog_list')  # Redirect to the blog list after deletion
+    
+    return render(request, 'blog/blog_delete.html', {'blog': blog})

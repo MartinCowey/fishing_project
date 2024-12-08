@@ -104,6 +104,16 @@ input[type="search"]::placeholder {
     margin-right: 5px; /* Adds space between input and button */
     }
 
+.btn-green {
+    background: #3f603f !important;
+    color: white;
+}
+
+.btn-green:hover {
+    background: #78a578;
+    color: white;
+}
+
 
 .btn-outline-success {
     color: #3f603f;
@@ -115,6 +125,7 @@ input[type="search"]::placeholder {
     background-color: #3f603f;
     color: white;
 }
+
 
 .dropdown-item:hover {
     color: #3f603f;
