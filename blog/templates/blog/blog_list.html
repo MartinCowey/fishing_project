@@ -10,6 +10,8 @@
             <div class="row">
                 {% for blog in blogs %}
                 <div class="col-md-4">
+                    <a href="{% if blog.slug and blog.slug != '' %}{% url 'blog_post' blog.slug %}{% else %}#{% endif %}" class="post-link">
+        
                     <div class="card mb-4 blog-list">
                         <div class="card-body">
                             <div class="image-container">
@@ -22,18 +24,15 @@
                                     <p class="author">Author: {{ blog.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% if blog.slug and blog.slug != '' %}{% url 'blog_post' blog.slug %}{% else %}#{% endif %}" class="post-link">
-                                {{ blog.title }}
-                              </a>
                                 <h2 class="card-title">{{ blog.title }}</h2>
                                 <p class="card-text">{{blog.excerpt}}</p>
-                            </a>
-
+                    
                             <hr />
                             <p class="card-text text-muted h6">{{ blog.created_on}}
                             </p>
                         </div>
                     </div>
+                </a>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>

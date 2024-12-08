@@ -74,15 +74,17 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
         return super().dispatch(request, *args, **kwargs)
         # add a blog post<<
     def get_form(self, form_class=None):
-            form = super().get_form(form_class)
-            form.initial['excerpt'] = 'Default excerpt'
-            form.initial['status'] = 1  # Assuming 1 is for 'Published'
-            return form
+        form = super().get_form(form_class)
+        form.initial['excerpt'] = 'Fished It, Mate'  # Set to an empty string instead of 'Default excerpt'
+        form.initial['status'] = 1  # Assuming 1 is for 'Published'
+        return form
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         # Ensure slug is set from the title
         form.instance.slug = slugify(form.cleaned_data['title'])
+        if not form.instance.excerpt:
+            form.instance.excerpt = form.instance.content[:100] + '...'
         return super().form_valid(form)
 
 class BlogUpdateView(LoginRequiredMixin, UpdateView):
@@ -94,7 +96,7 @@ class BlogUpdateView(LoginRequiredMixin, UpdateView):
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
         if not form.initial.get('excerpt'):
-            form.initial['excerpt'] = 'Default excerpt'
+            form.initial['excerpt'] = 'Fished It, Mate'  # Set to an empty string instead of 'Default excerpt'
         if not form.initial.get('status'):
             form.initial['status'] = 1  # Assuming 1 is for 'Published'
         return form
