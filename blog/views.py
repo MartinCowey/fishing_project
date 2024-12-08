@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -8,6 +8,8 @@ from .models import Blog, TypeOfFish, TypeOfFishing
 from .forms import CommentForm, BlogForm
 from comments.forms import CommentForm
 from django.contrib import messages
+from profiles.models import Profile
+from django.utils.text import slugify
 
 # Create your views here.
 
@@ -63,8 +65,18 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
     template_name = 'blog/blog_form.html'
     success_url = reverse_lazy('blog_list')
 
+        # add a blog post>>
+    def dispatch(self, request, *args, **kwargs):
+        # Ensure the user has a profile
+        if not Profile.objects.filter(user=request.user).exists():
+            messages.error(request, "It's like fishing at the wrong depth! You need to create a profile to add a blog post.")
+            return redirect('profile_form')  # Change 'profile_create' to your actual profile creation view name
+        return super().dispatch(request, *args, **kwargs)
+        # add a blog post<<
     def form_valid(self, form):
         form.instance.author = self.request.user
+        # Ensure slug is set from the title
+        form.instance.slug = slugify(form.cleaned_data['title'])
         return super().form_valid(form)
 
 class BlogUpdateView(LoginRequiredMixin, UpdateView):
