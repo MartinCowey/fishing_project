@@ -75,14 +75,45 @@ h1 {
 
 /* icon styling */
 
-.fish-icon {
-    margin-bottom: 20px;
-    margin-left: 20px;
+.jumbotron {
+    margin: 0 auto;
+    max-width: 800px; /* Limit the width */
+    border-radius: 10px; /* Rounded corners */
+  }
+  
+  .text-justify {
+    text-align: justify; /* Ensure consistent justification */
+  }
+  
+  h1, h2 {
+    font-size: 1.5rem; /* Customize font sizes */
+  }
+  
+/* .fish-icon {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  } */
+  
+.fish-icon-link {
+    color: #3f603f;
+    transition: 0.5s;
+    text-decoration: none;
 }
 
-.fish-blurb {
+.fish-icon-link:hover {
+    transform: translateY(-10px);
+} 
+
+
+/* .fish-icon {
+    margin-bottom: 20px;
+    margin-left: 20px;
+} */
+
+/* .fish-blurb {
     padding: 50px;
-}
+} */
 
 
 .form-inline {
@@ -204,8 +235,6 @@ a {
 /* footer */
 .container-fluid {
 width: 100%;
-/* padding-right: var(--bs-gutter-x, .75rem); */
-/* padding-left: var(--bs-gutter-x, .75rem); */
 margin-right: auto;
 margin-left: auto;
 }
@@ -214,9 +243,6 @@ margin-left: auto;
     background-color: #518061;
 }
 
-/* .soc-icon {
-    background-color: #e89483;
-} */
 
 .soc-icon i {
     font-size: 1.5em;
@@ -227,11 +253,8 @@ margin-left: auto;
 .soc-icon i:hover {
     transform: translateY(-10px);
 }
-/* .waves {
-    position: relative;
-    overflow: hidden;
-    height: 100px; 
-} */
+
+/* footer animation */
 
 .wave img {
     position: absolute;
@@ -240,13 +263,6 @@ margin-left: auto;
     width: 100%;
     height: 20px;
 }
-
-/* .wave img {
-    position: absolute;
-    width: 4000px; 
-    height: 50px;  
-    animation: animateWave 10s linear infinite;
-} */
 
 /* Apply animations to the waves */
 .wave#wave1 {

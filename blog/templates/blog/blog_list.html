@@ -10,29 +10,28 @@
             <div class="row">
                 {% for blog in blogs %}
                 <div class="col-md-4">
-                    <a href="{% if blog.slug and blog.slug != '' %}{% url 'blog_post' blog.slug %}{% else %}#{% endif %}" class="post-link">
-        
-                    <div class="card mb-4 blog-list">
+                    <a href="{% if blog.slug and blog.slug != '' %}{% url 'blog_post' blog.slug %}{% else %}#{% endif %}" class="post-link" aria-label="Read post: {{ blog.title }}">
+
+                    <div class="card mb-4 blog-list" aria-labelledby="blog-title-{{ blog.id }}">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in blog.featured_image.url %}
-                                <img class="card-img-top shadow-lg mb-5 bg-body rounded" src="{% static 'images/default_fishing.jpg' %}" alt="placeholder image">
+                                <img class="card-img-top shadow-lg mb-5 bg-body rounded" src="{% static 'images/default_fishing.jpg' %}" alt="Placeholder image for fishing blog">
                                 {% else %}
-                                <img class="card-img-top shadow-lg mb-5 bg-body rounded" src=" {{ blog.featured_image.url }}" alt="{{ blog.title }}">
+                                <img class="card-img-top shadow-lg mb-5 bg-body rounded" src=" {{ blog.featured_image.url }}" alt="Featured image for {{ blog.title }}">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ blog.author }}</p>
                                 </div>
                             </div>
-                                <h2 class="card-title">{{ blog.title }}</h2>
-                                <p class="card-text">{{blog.excerpt}}</p>
+                            <h2 class="card-title" id="blog-title-{{ blog.id }}">{{ blog.title }}</h2>
+                            <p class="card-text">{{ blog.excerpt }}</p>
                     
                             <hr />
-                            <p class="card-text text-muted h6">{{ blog.created_on}}
-                            </p>
+                            <p class="card-text text-muted h6">{{ blog.created_on }}</p>
                         </div>
                     </div>
-                </a>
+                    </a>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
@@ -43,16 +42,19 @@
             </div>
         </div>
     </div>
+    
     {% if is_paginated %}
-    <nav aria-label="Page navigation">
+    <nav aria-label="Pagination navigation">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
-            <li>
-                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
+            <li class="page-item">
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link" aria-label="Previous page">&laquo; PREV</a>
             </li>
             {% endif %}
             {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            <li class="page-item">
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link" aria-label="Next page">NEXT &raquo;</a>
+            </li>
             {% endif %}
         </ul>
     </nav>

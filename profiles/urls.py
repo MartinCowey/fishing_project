@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import ProfileDetailView, ProfileUpdateView, ProfileCreateView, ProfileDeleteView, CustomSignupView
+from . import views  # Import the views module
 
 urlpatterns = [
     path('signup/', CustomSignupView.as_view(), name='account_signup'),  # Use custom signup view here
