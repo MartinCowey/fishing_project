@@ -18,7 +18,7 @@
                   <div class="card-body text-center p-3">
                       <h2 class="card-title ">{{ profile.user.username }}'s Profile</h2>
                       <br>
-                      <img src="{{ profile.profile_pic.url }}" alt="{{ profile.user.username }}'s Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+                      <img src="{{ profile.profile_pic.url }}" alt="{{ profile.user.username }}'s Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;" aria-label="{{ profile.user.username }}'s Profile Picture">
                       <p class="card-text border"><strong>Bio:</strong> {{ profile.bio }}</p>
                   </div>
                   <hr>
@@ -35,8 +35,8 @@
                   <br>
                   <hr>
                   <div class="card-body text-center">
-                      <a href="{% url 'profile_edit' user.profile.slug %}" class="btn btn-outline-success me-2">Edit Profile</a>
-                      <a href="{% url 'profile_delete' profile.slug %}" class="btn btn-danger-round">Delete Profile</a>
+                      <a href="{% url 'profile_edit' user.profile.slug %}" class="btn btn-outline-success me-2" aria-label="Edit Profile">Edit Profile</a>
+                      <a href="{% url 'profile_delete' profile.slug %}" class="btn btn-danger-round" aria-label="Delete Profile">Delete Profile</a>
                   </div>
               </div>
           </div>
@@ -46,7 +46,7 @@
               {% if blogs %}
               <div class="list-group">
                   {% for blog in blogs %}
-                  <a href="{% url 'blog_post' blog.slug %}" class="list-group-item list-group-item-action">
+                  <a href="{% url 'blog_post' blog.slug %}" class="list-group-item list-group-item-action" aria-label="View Blog: {{ blog.title }}">
                       <h7 class="mb-1">{{ blog.title }}</h7>
                       <p class="mb-1 text-muted">{{ blog.created_on|date:"F j, Y" }}</p>
                   </a>
@@ -60,6 +60,5 @@
   </div>
 </body>
 </html>
-
 
 {% endblock %}

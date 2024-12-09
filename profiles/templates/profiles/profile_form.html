@@ -9,7 +9,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Create Profile</title> -->
 </head>
 <body>
     <div class="container d-flex justify-content-center align-items-center">
@@ -22,30 +21,36 @@
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="{{ form.bio.id_for_label }}" class="form-label">Bio</label>
-                        {{ form.bio|add_class:"form-control" }}
+                        <textarea id="{{ form.bio.id_for_label }}" name="{{ form.bio.name }}" class="form-control" placeholder="Write a short bio about yourself" required aria-label="Write a short bio about yourself">{{ form.bio.value }}</textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="{{ form.profile_pic.id_for_label }}" class="form-label">Profile Picture</label>
-                        {{ form.profile_pic|add_class:"form-control" }}
+                        <label for="{{ form.profile_pic.id_for_label }}" class="form-label">Profile Picture: Please add an image</label>
+                        <input type="file" id="{{ form.profile_pic.id_for_label }}" name="{{ form.profile_pic.name }}" class="form-control" aria-label="Upload a profile picture">
                     </div>
                     <div class="mb-3">
-                        <label for="{{ form.favourite_fish.id_for_label }}" class="form-label">Favourite Fish</label>
-                        {{ form.favourite_fish|add_class:"form-select" }}
+                        <label for="{{ form.favourite_fish.id_for_label }}" class="form-label">Favourite Fish - please choose a fish</label>
+                        <select id="{{ form.favourite_fish.id_for_label }}" name="{{ form.favourite_fish.name }}" class="form-select" aria-label="Select your favourite type of fish">
+                            {% for option in form.favourite_fish.field.choices %}
+                                <option value="{{ option.0 }}" {% if option.0 == form.favourite_fish.value %} selected {% endif %}>{{ option.1 }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                     <div class="mb-3">
-                        <label for="{{ form.favourite_fishing.id_for_label }}" class="form-label">Favourite Fishing Method</label>
-                        {{ form.favourite_fishing|add_class:"form-select" }}
+                        <label for="{{ form.favourite_fishing.id_for_label }}" class="form-label">Favourite Fishing Method - please choose a method</label>
+                        <select id="{{ form.favourite_fishing.id_for_label }}" name="{{ form.favourite_fishing.name }}" class="form-select" aria-label="Select your favourite fishing method">
+                            {% for option in form.favourite_fishing.field.choices %}
+                                <option value="{{ option.0 }}" {% if option.0 == form.favourite_fishing.value %} selected {% endif %}>{{ option.1 }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
-                    <button class="btn btn-outline-success" type="submit">Save Profile</button>
+                    <button class="btn btn-outline-success" type="submit" aria-label="Save Profile">Save Profile</button>
                 </form>
-                <a href="{% url 'home' %}" class="btn btn-danger-round m-2">Cancel</a>
+                <a href="{% url 'home' %}" class="btn btn-danger-round m-2" aria-label="Cancel and Return to Home">Cancel</a>
             </div>
         </div>
     </div>
 
 </body>
-
-
 </html>
 
 {% endblock %}
