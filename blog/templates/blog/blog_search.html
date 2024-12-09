@@ -7,13 +7,13 @@
         <!-- Search Results Column -->
         <div class="col-12 mt-3 left">
             <h2 class="font-red-hat">Search Results</h2>
-            <form method="get" class="mb-4">
+            <form method="get" class="mb-4" aria-label="Search blog posts">
                 <div class="row">
                     <div class="col-md-4">
-                        <input type="text" name="q" class="form-control" placeholder="Search keyword" value="{{ request.GET.q }}">
+                        <input type="text" name="q" class="form-control" placeholder="Search keyword" value="{{ request.GET.q }}" aria-label="Search keyword">
                     </div>
                     <div class="col-md-2">
-                        <button type="submit" class="btn btn-outline-success">Search</button>
+                        <button type="submit" class="btn btn-outline-success" aria-label="Submit search">Search</button>
                     </div>
                 </div>
             </form>
@@ -32,15 +32,13 @@
                                             <img class="card-img-top shadow-lg mb-5 bg-body rounded" src="{{ blog.featured_image.url }}" alt="{{ blog.title }}">
                                         {% endif %}
                                         <div class="image-flash">
-                                            <p class="author">Author: {{ blog.author }}</p>
+                                            <p class="author" aria-live="polite">Author: {{ blog.author }}</p>
                                         </div>
                                     </div>
-                                    <a href="{% if blog.slug and blog.slug != '' %}{% url 'blog_post' blog.slug %}{% else %}#{% endif %}" class="post-link">
-                                        {{ blog.title }}
-                                    </a>                                    
+                                    <a href="{% if blog.slug and blog.slug != '' %}{% url 'blog_post' blog.slug %}{% else %}#{% endif %}" class="post-link" aria-label="Read more about {{ blog.title }}">
                                         <h2 class="card-title">{{ blog.title }}</h2>
-                                        <p class="card-text">{{ blog.excerpt }}</p>
                                     </a>
+                                    <p class="card-text">{{ blog.excerpt }}</p>
                                     <hr />
                                     <p class="card-text text-muted h6">{{ blog.created_on }}</p>
                                 </div>
@@ -61,10 +59,10 @@
                 <nav aria-label="Page navigation">
                     <ul class="pagination justify-content-center">
                         {% if page_obj.has_previous %}
-                            <li><a href="?page={{ page_obj.previous_page_number }}&q={{ request.GET.q }}" class="page-link">&laquo; PREV</a></li>
+                            <li><a href="?page={{ page_obj.previous_page_number }}&q={{ request.GET.q }}" class="page-link" aria-label="Previous page">&laquo; PREV</a></li>
                         {% endif %}
                         {% if page_obj.has_next %}
-                            <li><a href="?page={{ page_obj.next_page_number }}&q={{ request.GET.q }}" class="page-link">NEXT &raquo;</a></li>
+                            <li><a href="?page={{ page_obj.next_page_number }}&q={{ request.GET.q }}" class="page-link" aria-label="Next page">NEXT &raquo;</a></li>
                         {% endif %}
                     </ul>
                 </nav>

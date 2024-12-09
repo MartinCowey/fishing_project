@@ -5,6 +5,7 @@ from django.urls import reverse_lazy, reverse
 from allauth.account.views import SignupView  # Importing SignupView from AllAuth
 from .models import Profile
 from .forms import ProfileForm
+from django.contrib.auth.decorators import login_required
 
 class CustomSignupView(SignupView):
     def form_valid(self, form):
@@ -19,6 +20,14 @@ class ProfileDetailView(DetailView):
     def get_object(self, queryset=None):
         # Get the profile using slug from URL
         return get_object_or_404(Profile, slug=self.kwargs['slug'])
+
+    def get_context_data(self, **kwargs):
+        # Fetch default context data
+        context = super().get_context_data(**kwargs)
+        # Add blogs written by the user associated with the profile
+        user = self.object.user  # The user linked to the profile
+        context['blogs'] = user.blog_posts.filter(status=1)  # Fetch only published blogs
+        return context
 
 class ProfileCreateView(LoginRequiredMixin, CreateView):
     model = Profile

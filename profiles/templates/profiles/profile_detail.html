@@ -2,45 +2,62 @@
 
 {% block content %}
 
-<!-- profiles/templates/profiles/profile_detail.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>{{ profile.user.username }}'s Profile</title> -->
 </head>
 <body>
- 
-<div class="container d-flex justify-content-center align-items-center">
-    <div class="card w-75 shadow-card p-3">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-        <div class="card-body text-center p-3 ">
-            <h2 class="card-title ">{{ profile.user.username }}'s Profile</h2>
-            <br>
-            <img src="{{ profile.profile_pic.url }}" alt="{{ profile.user.username }}'s Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
-          <p class="card-text border"><strong>Bio:</strong> {{ profile.bio }}</p>
-        </div>
-        <hr>
-        <div class="dropdown-fish">
-        <p><strong>Favourite Fish:</strong> {{ profile.favourite_fish.name }}</p>
-        <p><strong>Favourite Fishing Method:</strong> {{ profile.favourite_fishing.name }}</p>
-        </div>
-        <br>
-        {% if user.is_authenticated %}
-        <a href="{% url 'blog_create' %}" class="btn btn-primary mx-auto d-block mb-3" style="max-width: 200px;" aria-label="Create a New Blog Post">
-             Create Blog Post
-        </a>
-{% endif %}
-<br>
-        <hr>
-        <div class="card-body text-center">
-            <a href="{% url 'profile_edit' user.profile.slug %}" class="btn btn-outline-success me-2">Edit Profile</a>
-            <a href="{% url 'profile_delete' profile.slug %}" class="btn btn-danger-round">Delete Profile</a>
-        </div>
-      </div>
-    </div>
 
+    <div class="container mt-8">
+      <div class="row">
+          <div class="col-md-8">
+              <!-- Profile Details Section -->
+              <div class="card w-100 shadow-card p-3">
+                  <div class="card-body text-center p-3">
+                      <h2 class="card-title ">{{ profile.user.username }}'s Profile</h2>
+                      <br>
+                      <img src="{{ profile.profile_pic.url }}" alt="{{ profile.user.username }}'s Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;">
+                      <p class="card-text border"><strong>Bio:</strong> {{ profile.bio }}</p>
+                  </div>
+                  <hr>
+                  <div class="dropdown-fish">
+                      <p><strong>Favourite Fish:</strong> {{ profile.favourite_fish.name }}</p>
+                      <p><strong>Favourite Fishing Method:</strong> {{ profile.favourite_fishing.name }}</p>
+                  </div>
+                  <br>
+                  {% if user.is_authenticated %}
+                  <a href="{% url 'blog_create' %}" class="btn btn-primary mx-auto d-block mb-3" style="max-width: 200px;" aria-label="Create a New Blog Post">
+                      Create Blog Post
+                  </a>
+                  {% endif %}
+                  <br>
+                  <hr>
+                  <div class="card-body text-center">
+                      <a href="{% url 'profile_edit' user.profile.slug %}" class="btn btn-outline-success me-2">Edit Profile</a>
+                      <a href="{% url 'profile_delete' profile.slug %}" class="btn btn-danger-round">Delete Profile</a>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="col-md-3 m-2 p-2 mt-5">
+              <h4 class="font-red-hat m-2">Blogs by {{ profile.user.username }} || ({{ blogs|length }})</h4>
+              {% if blogs %}
+              <div class="list-group">
+                  {% for blog in blogs %}
+                  <a href="{% url 'blog_post' blog.slug %}" class="list-group-item list-group-item-action">
+                      <h7 class="mb-1">{{ blog.title }}</h7>
+                      <p class="mb-1 text-muted">{{ blog.created_on|date:"F j, Y" }}</p>
+                  </a>
+                  {% endfor %}
+              </div>
+              {% else %}
+              <p>No blogs written yet.</p>
+              {% endif %}
+          </div>
+      </div>
+  </div>
 </body>
 </html>
 
