@@ -11,3 +11,4 @@ urlpatterns = [
     path('<slug:slug>/', blog_post, name='blog_post'),
     
 ]
+

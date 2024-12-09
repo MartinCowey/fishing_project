@@ -21,7 +21,7 @@
                     {% csrf_token %}
                     <div class="mb-3">
                         <label for="{{ form.bio.id_for_label }}" class="form-label">Bio</label>
-                        <textarea id="{{ form.bio.id_for_label }}" name="{{ form.bio.name }}" class="form-control" placeholder="Write a short bio about yourself" required aria-label="Write a short bio about yourself">{{ form.bio.value }}</textarea>
+                        <textarea id="{{ form.bio.id_for_label }}" name="{{ form.bio.name }}" class="form-control" placeholder="Write a short bio about yourself" required aria-label="Write a short bio about yourself">{{ form.bio.value|default:'' }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label for="{{ form.profile_pic.id_for_label }}" class="form-label">Profile Picture: Please add an image</label>

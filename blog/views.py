@@ -70,7 +70,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
         # Ensure the user has a profile
         if not Profile.objects.filter(user=request.user).exists():
             messages.error(request, "It's like fishing at the wrong depth! You need to create a profile to add a blog post.")
-            return redirect('profile_form')  # Change 'profile_create' to your actual profile creation view name
+            return redirect('profile_create') 
         return super().dispatch(request, *args, **kwargs)
         # add a blog post<<
     def get_form(self, form_class=None):
