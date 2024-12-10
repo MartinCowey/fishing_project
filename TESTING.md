@@ -24,7 +24,7 @@ Initially my searh function raised a [warning](documentation/testing/search_vali
 | HTML source Code/Page | Errors | Warnings |
 | ---- | ----- | ------|
 | Home | 0 | 0 |
-| Blogs | 0 | 0 |
+| Blog page | 0 | 0 |
 | Blog Post | 0 | 0 |
 | About | 0 | 0 |
 | Add post | 0 | 0 |
@@ -39,12 +39,22 @@ Initially my searh function raised a [warning](documentation/testing/search_vali
 
 ### JavaScript Validation
 
-[JSHint](https://jshint.com/) was used to validate the small amount of JavaScript code added to the project. External JS, for Bootstrap purposes, obtained via [CDN](https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css) was not validated through JSHint.
+[JSHint](https://jshint.com/) was used to validate the 2 JavaScript files required for cooments and the terms and condition logi. 
+Bootstrap purposes, obtained via [CDN](https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css) was not validated through JSHint.
 
 | Page | Screenshot | Errors | Warnings |
 | ---- | ------ | ------ | ------ | 
-| base.html | ![js from base.html](documentation/testing/base_js.png) | none | none |
-| post_detail.html | ![js from post_detail.html](documentation/testing/post_index_js.png) | none | none |
+| comment.js | ![comments](documentation/images/27_javascript_comments.png) | none | 2 |
+| terms.js | ![terms](documentation/images/26_javascript_terms.webp) | none | none |
+
+
+jshint - comment.js
+
+Warnings addressed - for this project this would surfice but can be addressed in a later feature:
+
+1. If blogSlug never changes, you can safely ignore the warning.
+2. If you plan to maintain or scale the code, refactoring as shown above will make it cleaner and future-proof.
+
 
 <hr>
 
@@ -61,6 +71,10 @@ Initially my searh function raised a [warning](documentation/testing/search_vali
 <hr>
 
 ### CSS Validation
+
+Css validation was done through the jigsaw.w3 css validator with no errors:
+
+![No Errors](documentation/images/25_css_valid.webp)
 
 <p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
@@ -88,7 +102,7 @@ Initially my searh function raised a [warning](documentation/testing/search_vali
 
 External CSS for Bootstrap, provided by [CDN](https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css) was not tested. 
 
-![css validation](documentation/testing/css_valid.png)
+
   
 <hr> 
 
