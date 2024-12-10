@@ -67,45 +67,71 @@ Table of Contents ::
 The colour scheme is relatively simple for this: Looking at greens for nature and fishing. A nice deeper earthy green that gives a sense of calm. Also a simple white background to keep this clean and less cluttered, to give ease of viewing for the content.
 
 
-<p align="center">
-Webste - text and background
-<br>
-<img src="documentation/images/17_colour_checker_web.webp">
-<br>
-  </p>
-</p>
 
-<p align="center">
+Webste - text and background
+
+![Colour 2](documentation/images/17_colour_checker_web.webp)
+
+
+
 Logo
-<br>
-<img src="documentation/images/16_colour_checker_logo.webp">
-<br>
-  </p>
-</p>
+
+
+![Colour 2](documentation/images/16_colour_checker_logo.webp)
+
+
 
 
 ### Fonts
 
 The font used in this project 
 
-<br>
-<img src="documentation/images/12_fonts.webp">
-<br>
+![Font Colour 1](documentation/images/12_fonts.webp)
+
 I chose 2 fonts for the contrast. The first and main being Red Hat, which will be used for most of the project.
 
 in terms of font colour : my main colour against white background would be the 
 
 however to maximise again the slamon colour background for messages I needed to darken the green to: 182518
-<br>
-<img src="documentation/images/19_font_colour.webp">
-<br>
+
+![Font Colour 2](documentation/images/19_font_colour.webp)
 
 as the normal font colour wasn't passing the contrast checker:
 
-<br>
-<img src="documentation/images/20_font_colour.webp">
-<br>
 
+![Font Colour 3](documentation/images/20_font_colour.webp) 
+
+
+# Project Planning  
+ 
+## Strategy Plane
+
+The project goal was to build a simple website showcasing users experiences with local businesses with the option to have a dynamic conversation about the blog posts using the comments section. Users would also be able to create their own posts to further expand site content. My intention is to showcase local businesses and the services they offer. A rating system would be added on the idea of the user being a ‘Happy Heath’ or ‘Grumpy Croasdale’. Where possible external links to the businesses would be added in relation to social media and business websites.
+
+### Site Goals
+
+- Create an environment where people could rate and discuss local businesses.
+- Easy UI for quick fulfilment of feature CRUD functionalities.
+- UX remain the same whether on mobile, tablet or desktop
+- Scalable idea, for addition of future features that would allow for comunities to promote loacl events.
+
+## Agile Methodologies - Project Management
+
+ i followed the Agile planning methodolgy for this project and used a kanban project board building my user stories: [Github Projects Board](https://github.com/users/MartinCowey/projects/5/views/1) to plan the process effectively. Meeting specific goals for each app meant I could move onto a lot more parts in the project beyond my MVP.
+
+ Implimenting User and Owner stoies:
+
+ ![Example User story](documentation/images/21_user_story.webp) 
+
+### MoSCoW Prioritization
+
+For this project i used the MoSCoW Prioritization method to help manage the tasks:
+
+- **Must Haves**: this was the required MVP for the project with my first custom app being the Custom Profile. 
+ 
+- **Should Haves**: these began to add more functionality to the user experience and widen the scope further.
+- **Could Haves**: again further scope to add more interactivity and user experience beyond me initial MVP, some of which did manage to get done
+- **Won't Haves**: these weren't adopted in my project as I wanted to give myself a more rounded scope for elements that had a possible range for the scope 
 
 ### Wireframes
 
