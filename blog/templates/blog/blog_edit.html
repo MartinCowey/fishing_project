@@ -15,36 +15,36 @@
                 
                 <!-- Title Field -->
                 <div class="mb-3">
-                    <label for="id_title" class="form-label" id="title-label" aria-labelledby="title-label" aria-required="true">Title</label>
-                    <small id="title-label" class="form-text text-muted">You must add a title:</small>
+                    <label for="id_title" class="form-label">Title</label>
+                    <small id="title-post" class="form-text text-muted">You must add a title:</small>
                     {{ form.title|add_class:"form-control" }}
                 </div>
                 
                 <!-- Content Field -->
                 <div class="mb-3">
-                    <label for="id_content" class="form-label" id="content-label" aria-placeholder="Add content here" required aria-labelledby="content-label" aria-required="true">Content</label>
-                    <small id="form-label" class="form-label text-muted">You must add some content:</small>
+                    <label for="id_content" class="form-label">Content</label>
+                    <small id="form-post" class="form-label text-muted">You must add some content:</small>
                     {{ form.content|add_class:"form-control" }}
                 </div>
-                
+
                 <!-- Featured Image Field -->
                 <div class="mb-3">
-                    <label for="id_featured_image" class="form-label" id="featured-image-label" aria-labelledby="featured-image-label" aria-describedby="featured_image_help">Featured Image</label>
-                    <small id="featured_image_help" class="form-text text-muted">Update the image representing your post.</small>
+                    <label for="id_featured_image" class="form-label" id="featured-image-label" aria-describedby="featured_image_post">Featured Image</label>
+                    <small id="featured_image_post" class="form-text text-muted">Update the image representing your post.:</small>
                     {{ form.featured_image|add_class:"form-control" }}
                 </div>
                 
                 <!-- Fish Caught Field -->
                 <div class="mb-3">
-                    <label for="{{ form.favourite_fish.id_for_label }}" class="form-label" id="fish-label" aria-labelledby="fish-label" aria-describedby="fish_help">Fish Caught</label>
-                    <small id="fish_help" class="form-text text-muted">Update the type of fish caught.</small>
+                    <label for="{{ form.favourite_fish.id_for_label }}" class="form-label" id="fish-label" aria-describedby="fish_post">Fish Caught</label>
+                    <small id="fish_post" class="form-text text-muted">Update the type of fish caught.</small>
                     {{ form.favourite_fish|add_class:"form-select" }}
                 </div>
-                
+
                 <!-- Fishing Method Field -->
                 <div class="mb-3">
-                    <label for="{{ form.favourite_fishing.id_for_label }}" class="form-label" id="fishing-method-label" aria-labelledby="fishing-method-label" aria-describedby="fishing_help">Fishing Method Used</label>
-                    <small id="fishing_help" class="form-text text-muted">Update the fishing method used.</small>
+                    <label for="{{ form.favourite_fishing.id_for_label }}" class="form-label" id="fishing-method-label" aria-describedby="fishing_post">Fishing Method Used</label>
+                    <small id="fishing_post" class="form-text text-muted">Update the fishing method used.</small>
                     {{ form.favourite_fishing|add_class:"form-select" }}
                 </div>
                 

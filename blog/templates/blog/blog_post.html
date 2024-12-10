@@ -12,10 +12,10 @@
             <hr>
             <div class="text-center m-3">
             {% if blog.favourite_fish %}
-                <p aria-label="Fish caught in this session">Fish caught: {{ blog.favourite_fish }}</p>
+                <p>Fish caught: {{ blog.favourite_fish }}</p>
             {% endif %}
             {% if blog.favourite_fishing %}
-                <p aria-label="Fishing method used in this session">Fishing method used: {{ blog.favourite_fishing }}</p>
+                <p>Fishing method used: {{ blog.favourite_fishing }}</p>
             {% endif %}
           </div>
             <hr>
@@ -53,7 +53,7 @@
         <div class="col-12">
             <strong class="text-secondary">
                 <i class="far fa-comments" aria-hidden="true"></i> 
-                <span aria-label="Number of comments">{{ comment_count }}</span>
+                <span>{{ comment_count }}</span>
             </strong>
         </div>
         <div class="col-12">
