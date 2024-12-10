@@ -527,9 +527,43 @@ Also I didn't make pull requests in github as I believed that github automatical
 CSRF : Cross-Site Request Forgery
 
 
+### Languages Used
+
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- Python
+- Django
+
+### Python Modules Imported
+
+[Django-allauth](https://pypi.org/project/django-allauth/) is a package that offers a Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication. This is curcial for the blog and the custom profile was made as an extension of the Admin. `pip3 install Django~=4.2.1`
+
+[CI Database Maker](https://dbs.ci-dbs.net/) is a Postgres database specified in the DATABASE_URL environment variable, which is used for our database connections in this Django project.
+
+[Heroku](https://www.heroku.com/?utm_source=google&utm_medium=paid_search&utm_campaign=emea_heraw&utm_content=general-branded-search-rsa&utm_term=heroku&utm_source_platform=GoogleAds&gad_source=1&gclid=EAIaIQobChMI3JvWrYmdigMVbDcGAB1WPTjOEAAYASAAEgJCSPD_BwE) is a cloud based hosting platform that allows the building of data-driven applications, without touching the data infrastructure itself.
+
+[Gunicorn](https://pypi.org/project/gunicorn/) is a used for the production environment in the Django web application and a popular Web Server Gateway Interface (WSGI) HTTP server. `pip3 install gunicorn~=20.1`
+
+
+[Psycopg2](https://pypi.org/project/psycopg2/) is a database adapter for Python, allowing my Django applications to interact with the PostgreSQL database. `pip3 install dj-database-url~=0.5 psycopg`
+
+
+[Dj3-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/) is a Django package that facilitates integration with Cloudinary by implementing Django Storage API. With several lines of configuration, you can start using Cloudinary for both media and static files, providing management commands for removing unnecessary files. `pip3 install dj3-cloudinary-storage~=0.0.6`
+
+[Cloudinary](https://pypi.org/project/cloudinary/1.27.0/) is a cloud-based media management platform. Cloudinary offers a solution to a web application’s entire image management pipeline.. `pip3 install urllib3~=1.26.15`
+
+[Django Summernote](https://pypi.org/project/django-summernote/) is a WYSIWYG text editor plugin for Django for editing formatted content within web applications. 'pip install django-summernote'
+
+[Django Widget Tweaks](https://pypi.org/project/django-widget-tweaks/) is a Django application that allows you to Tweak the form field rendering in templates, not in python-level form definitions. Altering CSS classes and HTML attributes is supported. `pip install django-widget-tweaks`
 
 ## Future Features
 
+As the project progressed I realised my MVP was met in the first week, so began work on my 
+
+ToolTips for hovering over icons etc.
+user profile 
 
 # Testing
 

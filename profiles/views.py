@@ -6,6 +6,7 @@ from allauth.account.views import SignupView  # Importing SignupView from AllAut
 from .models import Profile
 from .forms import ProfileForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 class CustomSignupView(SignupView):
     def form_valid(self, form):
@@ -37,6 +38,7 @@ class ProfileCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user  # Associate the profile with the logged-in user
+        messages.success(self.request, "Your profile has been created successfully!")
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -49,6 +51,10 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'profiles/profile_edit.html'  # Use the new template
     success_url = '/profiles/'
 
+    def form_valid(self, form):
+        messages.success(self.request, "Your profile has been updated successfully!")
+        return super().form_valid(form)
+
     def get_success_url(self):
         return reverse_lazy('profile_detail', kwargs={'slug': self.object.slug})
 
@@ -60,6 +66,10 @@ class ProfileDeleteView(LoginRequiredMixin, DeleteView):
     model = Profile
     template_name = 'profiles/profile_confirm_delete.html'
     success_url = reverse_lazy('home')  # Redirect after deletion; adjust as needed
+
+    def form_valid(self, form):
+        messages.success(self.request, "Your profile has been deleted successfully!")
+        return super().form_valid(form)
 
     def get_object(self, queryset=None):
         return get_object_or_404(Profile, user=self.request.user)
