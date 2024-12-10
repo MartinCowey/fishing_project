@@ -22,13 +22,13 @@
     <div class="jumbotron px-4 py-3 bg-light">
       <div class="row align-items-center">
         <div class="col-md-2 text-center">
-          <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}">
-            <img aria-hidden="true" class="fish-icon-link" src="static/images/07_icon_fisher.png" alt="location-icon" width="55px">
+          <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Create a profile">
+            <img aria-hidden="true" class="fish-icon-link" src="static/images/07_icon_fisher.png" alt="location-icon" width="55">
           </a>
         </div>
         <div class="col-md-10 text-justify">
           <a class="text-decoration-none" 
-             href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}">
+             href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Create a profile">
             <strong>Create a profile:</strong>
           </a> The first thing to do is register and create a profile. This allows you to create posts and keep track of your fishing information...
         </div>
@@ -39,13 +39,13 @@
     <div class="jumbotron px-4 py-3 bg-light">
       <div class="row align-items-center">
         <div class="col-md-2 text-center">
-          <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}">
-            <img aria-hidden="true" class="fish-icon-link" src="static/images/05_icon_fish.png" alt="fish-icon" width="55px">
+          <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Add fish type to your profile">
+            <img aria-hidden="true" class="fish-icon-link" src="static/images/05_icon_fish.png" alt="fish-icon" width="55">
           </a>
         </div>
         <div class="col-md-10 text-justify">
           <a class="text-decoration-none" 
-             href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}">
+             href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Add fish type to your profile">
             <strong>Type of Fish Caught:</strong>
           </a> Add your favourite fish in your profile, and the ability to add a fish type when you make a blog to discuss your fishing session...
         </div>
@@ -56,13 +56,13 @@
     <div class="jumbotron px-4 py-3 bg-light">
       <div class="row align-items-center">
         <div class="col-md-2 text-center">
-          <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}">
-            <img aria-hidden="true" class="fish-icon-link" src="static/images/06_icon_reel.png" alt="reel-icon" width="55px">
+          <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Add fishing method to your profile">
+            <img aria-hidden="true" class="fish-icon-link" src="static/images/06_icon_reel.png" alt="reel-icon" width="55">
           </a>
         </div>
         <div class="col-md-10 text-justify">
           <a class="text-decoration-none" 
-             href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" class="fish-icon-link">
+             href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Add fishing method to your profile">
             <strong>Fishing Method Used:</strong>
           </a> Whether you prefer fly fishing, deep-sea fishing, or float waggler...
         </div>
