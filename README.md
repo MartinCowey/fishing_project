@@ -106,7 +106,7 @@ as the normal font colour wasn't passing the contrast checker:
  
 ## Strategy Plane
 
-The project goal was to build a simple website showcasing users experiences with local businesses with the option to have a dynamic conversation about the blog posts using the comments section. Users would also be able to create their own posts to further expand site content. My intention is to showcase local businesses and the services they offer. A rating system would be added on the idea of the user being a ‘Happy Heath’ or ‘Grumpy Croasdale’. Where possible external links to the businesses would be added in relation to social media and business websites.
+
 
 ### Site Goals
 
