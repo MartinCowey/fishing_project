@@ -16,12 +16,14 @@
                 <!-- Title Field -->
                 <div class="mb-3">
                     <label for="id_title" class="form-label" id="title-label" aria-labelledby="title-label" aria-required="true">Title</label>
+                    <small id="title-label" class="form-text text-muted">You must add a title:</small>
                     {{ form.title|add_class:"form-control" }}
                 </div>
                 
                 <!-- Content Field -->
                 <div class="mb-3">
-                    <label for="id_content" class="form-label" id="content-label" aria-labelledby="content-label" aria-required="true">Content</label>
+                    <label for="id_content" class="form-label" id="content-label" aria-placeholder="Add content here" required aria-labelledby="content-label" aria-required="true">Content</label>
+                    <small id="form-label" class="form-label text-muted">You must add some content:</small>
                     {{ form.content|add_class:"form-control" }}
                 </div>
                 

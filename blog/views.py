@@ -53,6 +53,7 @@ class BlogSearchView(ListView):
         context['fishing_methods'] = TypeOfFishing.objects.all()  # Fetch all fishing methods
         return context
 
+
 class BlogList(ListView):
     queryset = Blog.objects.filter(status=1)
     template_name = "blog/blog_list.html"
@@ -85,6 +86,7 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
         form.instance.slug = slugify(form.cleaned_data['title'])
         if not form.instance.excerpt:
             form.instance.excerpt = form.instance.content[:100] + '...'
+        messages.success(self.request, "Your blog post was created successfully!")   
         return super().form_valid(form)
 
 class BlogUpdateView(LoginRequiredMixin, UpdateView):
@@ -101,8 +103,13 @@ class BlogUpdateView(LoginRequiredMixin, UpdateView):
             form.initial['status'] = 1  # Assuming 1 is for 'Published'
         return form
 
+    def form_valid(self, form):
+        messages.success(self.request, "Your blog post was updated successfully!")
+        return super().form_valid(form)
+
 def home_page(request):
     return render(request, 'home.html')  # This will render the home.html template
+
 
 
 def blog_post(request, slug):
@@ -143,6 +150,7 @@ def blog_edit(request, slug):
         form = BlogForm(request.POST, request.FILES, instance=blog)
         if form.is_valid():
             form.save()
+            messages.success(request, "Your blog post was updated successfully!")
             return redirect('blog_post', slug=blog.slug)  # Redirect to the updated post
     else:
         form = BlogForm(instance=blog)
@@ -159,6 +167,7 @@ def blog_delete(request, slug):
     
     if request.method == 'POST':
         blog.delete()
+        messages.success(request, "Your blog post was deleted successfully.")
         return redirect('blog_list')  # Redirect to the blog list after deletion
     
     return render(request, 'blog/blog_delete.html', {'blog': blog})
