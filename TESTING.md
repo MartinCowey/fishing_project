@@ -130,6 +130,18 @@ Lighthouse testing was carried out in Incognito mode to acheive the best result.
 
 The WAVE report tool was used to check accisibility and initially raised a number of contrast issues due to the shade of the background colour. This was amended to accomadate and clear the accisibility issues.
 
+### Accessible and Compliant checker
+
+Home page
+
+
+Blog list page
+
+
+Blog post
+
+
+
 ## Manual Testing
 
 ### User Input/Form Validation

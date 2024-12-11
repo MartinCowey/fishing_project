@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3 class="font-red-hat">{% trans "Sign Up" %}</h3>
+      <h1 class="font-red-hat">{% trans "Sign Up" %}</h1>
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
@@ -27,7 +27,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+        <h1 class="modal-title fs-4" id="termsModalLabel">Terms and Conditions</h1>
       </div>
       <div class="modal-body">
         <div class="modal-body p-4">

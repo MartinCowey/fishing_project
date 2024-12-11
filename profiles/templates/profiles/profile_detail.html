@@ -8,7 +8,7 @@
               <!-- Profile Details Section -->
               <div class="card w-100 shadow-card p-3">
                   <div class="card-body text-center p-3">
-                      <h2 class="card-title ">{{ profile.user.username }}'s Profile</h2>
+                      <h1 class="card-title font-red-hat m-2">{{ profile.user.username }}'s Profile</h1>
                       <br>
                       <img src="{{ profile.profile_pic.url }}" alt="{{ profile.user.username }}'s Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px; object-fit: cover;" aria-label="{{ profile.user.username }}'s Profile Picture">
                       <p class="card-text border"><strong>Bio:</strong> {{ profile.bio }}</p>
@@ -34,7 +34,7 @@
           </div>
   
           <div class="col-md-3 m-2 p-2 mt-5">
-              <h4 class="font-red-hat m-2">Blogs by {{ profile.user.username }} || ({{ blogs|length }})</h4>
+              <h2 class="font-red-hat m-2 fs-4">Blogs by {{ profile.user.username }} || ({{ blogs|length }})</h2>
               {% if blogs %}
               <div class="list-group">
                   {% for blog in blogs %}

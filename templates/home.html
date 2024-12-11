@@ -4,80 +4,72 @@
 
 <div class="container w-80 p-3">
   <div class="jumbotron shadow-lg p-3 mb-5 bg-body rounded">
-    <img class="logo-image mw-100" src="static/images/05_logo_fish_B.webp" alt="logo-image">
+    <img class="logo-image mw-100" src="static/images/05_logo_fish_B.webp" alt="Fished it, Mate! Logo">
     <div class="p-5">
       <h1 class="font-red-hat display-6 text-center mb-3">Welcome to Fished it, Mate!</h1>
-      <p class="text-justify">
+      <p>
         A community-driven blog dedicated to all fishing enthusiasts! Whether you're a seasoned angler or just starting out, this platform is designed for like-minded individuals who share a passion for fishing...
       </p>
       <h2 class="font-red-hat fs-4 mt-4">How It Works</h2>
-      <p class="text-justify">
+      <p>
         At Fished it, Mate!, we believe in making information accessible and engaging. Here's how you can navigate our blog:
       </p>
     </div>
     <!-- Icon and Text Section -->
-<div class="row">
+     <div class="row">
   <div class="col-md-12">
-    <!-- Icon Jumbotron 1 -->
-    <div class="jumbotron px-4 py-3 bg-light">
-      <div class="row align-items-center">
-        <div class="col-md-2 text-center">
-          <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Create a profile">
-            <img aria-hidden="true" class="fish-icon-link" src="static/images/07_icon_fisher.png" alt="location-icon" width="55">
-          </a>
-        </div>
-        <div class="col-md-10 text-justify">
-          <a class="text-decoration-none" 
-             href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Create a profile">
-            <strong>Create a profile:</strong>
-          </a> The first thing to do is register and create a profile. This allows you to create posts and keep track of your fishing information...
+    <!-- Single link wrapping all jumbotrons -->
+    <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" 
+       aria-label="Create a profile and add details"
+       class="d-flex flex-column align-items-center text-decoration-none w-100">
+      
+      <!-- Icon Jumbotron 1 -->
+      <div class="jumbotron px-4 py-3 bg-light">
+        <div class="d-flex flex-column flex-md-row align-items-center w-100">
+          <div class="col-12 col-md-2 text-center mb-3 mb-md-0">
+            <img class="fish-icon-link" src="static/images/07_icon_fisher.png" alt="" aria-hidden="true" width="55">
+          </div>
+          <div class="col-12 col-md-10 text-center text-md-start">
+            <strong>Create a profile:</strong> The first thing to do is register and create a profile. This allows you to create posts and keep track of your fishing information...
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Icon Jumbotron 2 -->
-    <div class="jumbotron px-4 py-3 bg-light">
-      <div class="row align-items-center">
-        <div class="col-md-2 text-center">
-          <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Add fish type to your profile">
-            <img aria-hidden="true" class="fish-icon-link" src="static/images/05_icon_fish.png" alt="fish-icon" width="55">
-          </a>
-        </div>
-        <div class="col-md-10 text-justify">
-          <a class="text-decoration-none" 
-             href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Add fish type to your profile">
-            <strong>Type of Fish Caught:</strong>
-          </a> Add your favourite fish in your profile, and the ability to add a fish type when you make a blog to discuss your fishing session...
+      <!-- Icon Jumbotron 2 -->
+      <div class="jumbotron px-4 py-3 bg-light">
+        <div class="d-flex flex-column flex-md-row align-items-center w-100">
+          <div class="col-12 col-md-2 text-center mb-3 mb-md-0">
+            <img class="fish-icon-link" src="static/images/05_icon_fish.png" alt="" aria-hidden="true" width="55">
+          </div>
+          <div class="col-12 col-md-10 text-center text-md-start">
+            <strong>Type of Fish Caught:</strong> Add your favourite fish in your profile, and the ability to add a fish type when you make a blog to discuss your fishing session...
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Icon Jumbotron 3 -->
-    <div class="jumbotron px-4 py-3 bg-light">
-      <div class="row align-items-center">
-        <div class="col-md-2 text-center">
-          <a href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Add fishing method to your profile">
-            <img aria-hidden="true" class="fish-icon-link" src="static/images/06_icon_reel.png" alt="reel-icon" width="55">
-          </a>
-        </div>
-        <div class="col-md-10 text-justify">
-          <a class="text-decoration-none" 
-             href="{% if user.profile %}{% url 'profile_detail' user.profile.slug %}{% else %}{% url 'profile_create' %}{% endif %}" aria-label="Add fishing method to your profile">
-            <strong>Fishing Method Used:</strong>
-          </a> Whether you prefer fly fishing, deep-sea fishing, or float waggler...
+      <!-- Icon Jumbotron 3 -->
+      <div class="jumbotron px-4 py-3 bg-light">
+        <div class="d-flex flex-column flex-md-row align-items-center w-100">
+          <div class="col-12 col-md-2 text-center mb-3 mb-md-0">
+            <img class="fish-icon-link" src="static/images/06_icon_reel.png" alt="" aria-hidden="true" width="55">
+          </div>
+          <div class="col-12 col-md-10 text-center text-md-start">
+            <strong>Fishing Method Used:</strong> Whether you prefer fly fishing, deep-sea fishing, or float waggler...
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 </div>
 
+
     <!-- Footer Section -->
-    <div class="p-5 text-justify">
+    <div class="p-5">
       <p>Join us in celebrating the art of fishing! Share your stories, learn from others, and contribute to a vibrant community...</p>
       <p class="text-center">
-        <a class="btn btn-outline-success mt-3" href="{% url 'blog_list' %}" role="button" target="_blank" aria-label="Explore Blog Posts">Blog Posts</a>
+        <a class="btn btn-outline-success mt-3" href="{% url 'blog_list' %}" role="button" aria-label="Explore Blog Posts">Blog Posts</a>
       </p>
-    </div>
+    </div>    
   </div>
 </div>
 

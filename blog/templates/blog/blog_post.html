@@ -93,11 +93,16 @@
         <div class="col-md-4 card mb-4 mt-3 card-bord">
             <div class="card-body">
                 {% if user.is_authenticated %}
-                    <h3 class="font-red-hat">Leave a comment:</h3>
+                    <h4 class="font-red-hat">Leave a comment:</h4>
                     <p>Posting as: {{ user.username }}</p>
                     <form id="commentForm" method="post" style="margin-top: 1.3em;">
                         {{ comment_form | crispy }}
                         {% csrf_token %}
+                        <!-- Label for comment body -->
+                            <div class="form-group">
+                                <label for="id_body" class="visually-hidden">Comment</label>
+                    
+                            </div>
                         <button id="submitButton" 
                                 type="submit" 
                                 class="btn btn-outline-success" 

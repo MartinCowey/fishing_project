@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from django.shortcuts import redirect, get_object_or_404, reverse
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from .models import Comment
 from blog.models import Blog
 from .forms import CommentForm
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+
 
 def add_comment(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
@@ -15,15 +15,14 @@ def add_comment(request, slug):
             comment.author = request.user
             comment.blog = blog
             comment.save()
-            
     return redirect('blog_post', slug=blog.slug)
+
 
 def comment_edit(request, slug, comment_id):
     """
-    view to edit comments
+    View to edit comments.
     """
     if request.method == "POST":
-
         queryset = Blog.objects.filter(status=1)
         blog = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
@@ -34,15 +33,20 @@ def comment_edit(request, slug, comment_id):
             comment.blog = blog
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+            messages.add_message(
+                request, messages.SUCCESS, 'Comment Updated!'
+            )
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(
+                request, messages.ERROR, 'Error updating comment!'
+            )
 
     return HttpResponseRedirect(reverse('blog_post', args=[slug]))
 
+
 def comment_delete(request, slug, comment_id):
     """
-    view to delete comment
+    View to delete a comment.
     """
     queryset = Blog.objects.filter(status=1)
     blog = get_object_or_404(queryset, slug=slug)
@@ -50,8 +54,12 @@ def comment_delete(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+        messages.add_message(
+            request, messages.SUCCESS, 'Comment deleted!'
+        )
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(
+            request, messages.ERROR, 'You can only delete your own comments!'
+        )
 
     return HttpResponseRedirect(reverse('blog_post', args=[slug]))
