@@ -110,18 +110,27 @@ as the normal font colour wasn't passing the contrast checker:
 
 ### Site Goals
 
-- Create an environment where people could rate and discuss local businesses.
-- Easy UI for quick fulfilment of feature CRUD functionalities.
-- UX remain the same whether on mobile, tablet or desktop
-- Scalable idea, for addition of future features that would allow for comunities to promote loacl events.
+- Create an environment where people can create, read, update and delete a profile [created by themselves] : *custom app 1*
+- Create acommunity so people can create, read, update and delete their own blog posts in order to log a sessions fishing : *custom app 2*
+- Intuitive and inclusive User Interface, and desing strategy for CRUD functionalities.
+- A UX applied website with a good solid responsive application remaining the same across mobile, tablet or desktop
+- Future features ready for growing and meeting client/user needs.
 
 ## Agile Methodologies - Project Management
 
- i followed the Agile planning methodolgy for this project and used a kanban project board building my user stories: [Github Projects Board](https://github.com/users/MartinCowey/projects/5/views/1) to plan the process effectively. Meeting specific goals for each app meant I could move onto a lot more parts in the project beyond my MVP.
+ I followed the Agile planning methodolgy for this project and used a kanban project board building my user stories: [Github Projects Board](https://github.com/users/MartinCowey/projects/5/views/1) to plan the process effectively. Meeting specific goals for each app meant I could move onto a lot more parts in the project beyond my MVP.
+
+ Project board showing Agile workflow:
+
+![Project board](documentation/images/28_Project_board.webp) 
+
+<br>
 
  Implimenting User and Owner stoies:
 
- ![Example User story](documentation/images/21_user_story.webp) 
+ ![User story](documentation/images/21_user_story.webp) 
+
+<br>
 
 ### MoSCoW Prioritization
 
@@ -131,7 +140,12 @@ For this project i used the MoSCoW Prioritization method to help manage the task
  
 - **Should Haves**: these began to add more functionality to the user experience and widen the scope further.
 - **Could Haves**: again further scope to add more interactivity and user experience beyond me initial MVP, some of which did manage to get done
-- **Won't Haves**: these weren't adopted in my project as I wanted to give myself a more rounded scope for elements that had a possible range for the scope 
+- **Won't Haves**: these weren't adopted in my project as I wanted to give myself a more rounded scope for elements that had a possible range for the scope
+
+### User Stories
+
+
+
 
 ### Wireframes
 
