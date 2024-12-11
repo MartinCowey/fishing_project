@@ -27,6 +27,16 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
   </p>
 </p>
 
+<br>
+
+ <p align="center">
+    Super User
+    <br />
+    <a href="https://fished-it-mate-c5653a6c521b.herokuapp.com/admin/login/?next=/admin/"><strong>Admin login »</strong></a>
+    <br />
+  </p>
+</p>
+
 
 <br>
 <hr>
@@ -101,6 +111,8 @@ as the normal font colour wasn't passing the contrast checker:
 
 ![Font Colour 3](documentation/images/20_font_colour.webp) 
 
+<hr>
+<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
 # Project Planning  
  
@@ -144,6 +156,7 @@ For this project i used the MoSCoW Prioritization method to help manage the task
 
 ### User Stories
 
+ [#1](https://github.com/MartinCowey/fishing_project/issues/20) As a user, I want to navigate easily between different sections of the site for a smooth experience.
 
 
 
@@ -213,7 +226,9 @@ For this project i used the MoSCoW Prioritization method to help manage the task
 </details>
 <br>
 
+
 <hr>
+<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
 ## Models :
 
@@ -282,6 +297,8 @@ Add a favourites button to articles, allowing users to effortlessly share conten
 ## User Stories
 
 
+<hr>
+<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
 ### Site Goals
 
@@ -349,6 +366,7 @@ Now Succesfully deployed:
 
 <br>
 <hr>
+<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
 ## Errors and Bugs
 <br>
@@ -463,7 +481,8 @@ Edit comments - mismatch error. Due to separating the apps the connetion need so
 
 
 
-
+<hr>
+<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
 ## Apps and Models
 
@@ -557,10 +576,10 @@ One bug I encountered that turned out to be more user error - due to relearning 
 Also I didn't make pull requests in github as I believed that github automatically did this - which had a knock on effect for pulling from my branch and the main wasn't aligned with my new branch.
 
 
-
 <br>
 </details>
-
+<hr>
+<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
 ## Defensive Design
 
@@ -600,16 +619,129 @@ CSRF : Cross-Site Request Forgery
 
 ## Future Features
 
-As the project progressed I realised my MVP was met in the first week, so began work on my 
+As the project progressed I realised my MVP was met in the first week, so began work on my custom apps quite quickly. There are a few more features that either need to be added or could be aded at a later day:
+
+1. Forgot password function for the user to recover a password
+2. SEO links updated, using meta links.
+3. The ability to be discoverable as a profile - known to others
+4. To be able to 'Search profiles' and look for profiles
+5. Favourites - blog posts and profiles
+6. Be able to 'follow' others
+7. Add a location to the blog for more clarity
+8. User uplaoded mages that can be automatically formatted for better validation
+9. Multiple images on a post
+10. Contact forms for emailing or messaging each other on the blog
+11. Possibility for sponsors or advertisements to be added on site.
 
 ToolTips for hovering over icons etc.
 user profile 
 
 # Testing
 
+Please find Testing and Validation for my project and custom apps in the [TESTING.md](TESTING.md) file
+
+
+<hr>
+<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
+
+# Acknowledgements
+
+This has been an amazing journey, 16 weeks on the Code Institute bootcamp and all that learning and intensity culminates into this project. I have thoroughly enjoyed every minute of it...even when I picked that scratch of wallpaper and the whole wall came down! I feel a sense of pride in this achievement and obviously have had a lot of support and help through all of this. It goes without saying that using the internet and Perplexity as a learning tool to discuss and conceptualise ideas. Have a real deep dive into problems to help fast track solutions. I by no means feel like I know what i would like to know, and after having 6 weeks of Python and Django we took on a massive task. However using this technology, mixed in with the plethora of resources avaliable, I was able to take concepts and move with them, shape them, without having to have a deeper understanding of all the requirements. This is about problem solving...and I like to discuss my thoughts..so being able to have that allowed me to get to the next level.
+
+The people I would like to thank know who they are. But certainly my cohorts on the course: [Laura]https://github.com/laurachri-hall, [Tayla](https://github.com/TaylaJBall), and certainly [Heath]https://github.com/Heath1979 for their support and ear to bend [which I realise was wuite a lot]. Also the support from code Institute was above and beyond, [Amy](https://github.com/amylour) for always listening and offering me a reset, ready and let's go again. [John](https://github.com/johnrearden) for the immense patience and knowledge you have, you went out of your way to help me and give me an immense sense of accomplishment...and it was good to sit and chat, and discover new bugs you had never seen before [like gazing through a telescope and finding undiscovered stars] "we shall call this one...the Martin Bug". Also [Mark](https://github.com/mbriscoe) for his help and advice and encouragement. We were truly blessed on this course with the people we were around. Also to the rest of the cohort for getting involved and supporting one another along the way.
+
+This has been an amazing journey! 16 weeks on the Code Institute bootcamp and all that learning and intensity culminates in this project. I have thoroughly enjoyed every minute of it... even when I picked that scratch of wallpaper and the whole wall came down! I feel a sense of pride in this achievement and have, of course, received a lot of support and help throughout.
+
+It goes without saying that using the internet and Perplexity as a learning tool to discuss and conceptualize ideas has been invaluable. Taking a real deep dive into problems helped fast-track solutions. I by no means feel like I know as much as I would like to, and after just six weeks of Python and Django we took on a massive task. However, by using this technology, mixed with the plethora of resources available, I was able to take concepts, move with them, and shape them without needing a deeper understanding of all the requirements. This is about problem-solving... and I like to discuss my thoughts, so being able to do that allowed me to reach the next level and develop this project in it's entirety.
+
+The people I would like to thank know who they are. Certainly, my cohorts on the course: [Laura]https://github.com/laurachri-hall, [Tayla](https://github.com/TaylaJBall), and [Heath]https://github.com/Heath1979 for their support and for being there to listen [which I realize was quite a lot]. Also, the support from Code Institute was above and beyond, [Amy](https://github.com/amylour) for always listening, offering me a reset, and getting me ready to go again; [John](https://github.com/johnrearden) for your immense patience and knowledge, going out of your way to help me and give me a deep sense of accomplishment... and for sitting and chatting as we discovered new bugs together [like gazing through a telescope and finding undiscovered stars]: *"This is a new one for me, we shall call this one...the Martin Bug."* Also, [Mark](https://github.com/mbriscoe) for his help, advice, and encouragement.
+
+We were truly blessed on this course with the people we were around. Also, thanks to the rest of the cohort for getting involved and supporting one another along the way.
+
+
+
+## Resources
+
+- [GitHub](https://docs.github.com/en)
+- [Perplexity](https://www.perplexity.ai)
+- [Chat GPT](https://chatgpt.com/)
+- [Code Institute - LMS](https://codeinstitute.net/)
+- [Django](https://docs.djangoproject.com/en/5.1/)
+- [Medium](https://medium.com/)
+- [Mozilla - MDN](https://developer.mozilla.org/en-US/)
+- [Perplexity](https://www.perplexity.ai)
+- [Stack Overflow](https://stackoverflow.com/)
+- [W3C](https://www.w3.org/)
+- [W3Schools](https://www.w3schools.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Lucid charts](https://www.lucidchart.com/pages/)
+- [CSS lint](https://csslint.net/)
+- [Icons 1](https://www.flaticon.com/)
+- [Icons 2](https://fontawesome.com/icons)
+
+Colours
+[Blindness checker](https://www.accessibilitychecker.org/blog/color-blind-accessibility/)
+[Colour contrast checker](https://accessibleweb.com/color-contrast-checker/)
+[Colour contrast checker](https://colourcontrast.cc/)
+
+Fonts
+[Red Hat](https://fonts.google.com/specimen/Red+Hat+Display?categoryFilters=Feeling:%2FExpressive%2FCalm)
+[Delius Swash](https://fonts.google.com/specimen/Delius+Swash+Caps?categoryFilters=Feeling:%2FExpressive%2FCute)
+
+Learning documentation
+[Heroku](https://devcenter.heroku.com/articles/django-assets)
+[Django](https://docs.djangoproject.com/en/5.1/intro/)
+
+Django Blog
+[medium](https://mralgo.medium.com/how-to-create-a-django-blog-in-5-easy-steps-in-2023-50181dc10038)
+[django central](https://djangocentral.com/building-a-blog-application-with-django/)
+[just django](https://justdjango.com/blog/build-a-blog-with-django)
+[Summernote](https://djangocentral.com/integrating-summernote-in-django/)
+
+Custom Profile documentation
+[Creation Dev Handbook](https://www.devhandbook.com/django/user-profile/)
+[Stack overflow authentication](https://stackoverflow.com/questions/70650091/should-we-use-django-authentication-for-all-users-of-a-site)
+[Django documentation: authentication](https://docs.djangoproject.com/en/5.1/topics/auth/default/)
+[Django documentation: custom authentication](https://docs.djangoproject.com/en/5.1/topics/auth/customizing/)
+
+Deployment
+[Gunicorn](https://dev.to/doridoro/what-is-gunicorn-4n26)
+[Procfile](https://devcenter.heroku.com/articles/procfile)
+
+Fishing related links
+[Fish types](https://badangling.com/coarse-fish-species-guide/#)
+[UK Licence Information](https://www.gov.uk/fishing-licences/buy-a-fishing-licence)
+
+Widget Tweaks
+[pypi](https://pypi.org/project/django-widget-tweaks/0.2.1/)
+[github django widget tweaks](https://github.com/jazzband/django-widget-tweaks/blob/master/widget_tweaks/templatetags/widget_tweaks.py)
+
+Waves on footer
+[Footer waves](https://www.youtube.com/watch?v=GL-jRHPSnPE)
+[Animation](https://www.youtube.com/watch?v=HZHHBwzmJLk)
+[@keyframing](https://www.w3schools.com/cssref/atrule_keyframes.php)
+
+Hover transistions
+[Card styling](https://stackoverflow.com/questions/63174850/how-to-add-animation-to-a-bootstrap-4-card-on-hover)
+
+Responsive and defensive design
+[Stack overflow - bootstrap](https://stackoverflow.com/questions/26336190/bootstrap-sticky-footer-overlapping-content)
+[Assistive tech](https://whitep4nth3r.com/blog/when-to-use-aria-labels-in-your-html/)
+[Sizing](https://getbootstrap.com/docs/4.0/utilities/sizing/)
+[Agile](https://www.easyagile.com/blog/how-to-write-good-user-stories-in-agile-software-development/#:~:text=It's%20also%20the%20smallest%20unit,%5D%20so%20that%20%5Bbenefit%5D.)
+
+Youtube
+[Bro Code](https://www.youtube.com/@BroCodez)
+
+
+Langauges used
+
+![Languages used](documentation/testing/03_languages_used.png)
+
+
 
 [BACK TO TOP](#contents)
 
-
+<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
 
