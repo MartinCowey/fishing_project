@@ -128,6 +128,7 @@ as the normal font colour wasn't passing the contrast checker:
 - A UX applied website with a good solid responsive application remaining the same across mobile, tablet or desktop
 - Future features ready for growing and meeting client/user needs.
 
+
 ## Agile Methodologies - Project Management
 
  I followed the Agile planning methodolgy for this project and used a kanban project board building my user stories: [Github Projects Board](https://github.com/users/MartinCowey/projects/5/views/1) to plan the process effectively. Meeting specific goals for each app meant I could move onto a lot more parts in the project beyond my MVP.
@@ -158,6 +159,9 @@ For this project i used the MoSCoW Prioritization method to help manage the task
 
  [#1](https://github.com/MartinCowey/fishing_project/issues/20) As a user, I want to navigate easily between different sections of the site for a smooth experience.
 
+
+<hr>
+<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
 
 ### Wireframes
@@ -294,20 +298,6 @@ Add a share button to articles, allowing users to effortlessly share content on 
 
 Add a favourites button to articles, allowing users to effortlessly share content on their social media platforms, increasing the website's visibility and user engagement.
 
-## User Stories
-
-
-<hr>
-<p align="right"><a href="#fished-it-mate">Back To Top</a></p>
-
-### Site Goals
-
-1. Bring the fishing community together in a wholseome way
-2. Share and discuss fishing places and experiences
-3. Create a platform for users to contribute their fishing experience
-4. Connect enthusiasts through shared experiences
-5. Give beginners the opportunity to delve into the world of fishing
-6. Allow like minded people to collect information that helps the community
 
 ## Deployment
 
@@ -595,6 +585,8 @@ CSRF : Cross-Site Request Forgery
 - Python
 - Django
 
+![Languages used](documentation/testing/03_languages_used.png)
+
 ### Python Modules Imported
 
 [Django-allauth](https://pypi.org/project/django-allauth/) is a package that offers a Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication. This is curcial for the blog and the custom profile was made as an extension of the Admin. `pip3 install Django~=4.2.1`
@@ -734,13 +726,11 @@ Youtube
 [Bro Code](https://www.youtube.com/@BroCodez)
 
 
-Langauges used
-
-![Languages used](documentation/testing/03_languages_used.png)
 
 
 
-[BACK TO TOP](#contents)
+
+
 
 <p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
