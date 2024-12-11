@@ -13,11 +13,13 @@ from django.utils.text import slugify
 
 # Create your views here.
 
-class HomePage(TemplateView): 
+
+class HomePage(TemplateView):
     """
-    Displays home page"
+    Displays home page
     """
     template_name = 'base.html'
+
 
 class BlogSearchView(ListView):
     model = Blog
@@ -49,8 +51,8 @@ class BlogSearchView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['fish_types'] = TypeOfFish.objects.all()  # Fetch all fish types
-        context['fishing_methods'] = TypeOfFishing.objects.all()  # Fetch all fishing methods
+        context['fish_types'] = TypeOfFish.objects.all()
+        context['fishing_methods'] = TypeOfFishing.objects.all()
         return context
 
 
@@ -60,34 +62,42 @@ class BlogList(ListView):
     paginate_by = 6
     context_object_name = 'blogs'
 
+
 class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Blog
     form_class = BlogForm
     template_name = 'blog/blog_form.html'
     success_url = reverse_lazy('blog_list')
 
-        # add a blog post>>
+    # Add a blog post
     def dispatch(self, request, *args, **kwargs):
         # Ensure the user has a profile
         if not Profile.objects.filter(user=request.user).exists():
-            messages.error(request, "It's like fishing at the wrong depth! You need to create a profile to add a blog post.")
-            return redirect('profile_create') 
+            messages.error(
+                request,
+                "It's like fishing at the wrong depth! You need to"
+                " create a profile to add a blog post."
+            )
+            return redirect('profile_create')
         return super().dispatch(request, *args, **kwargs)
-        # add a blog post<<
+
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
-        form.initial['excerpt'] = 'Fished It, Mate'  # Set to an empty string instead of 'Default excerpt'
-        form.initial['status'] = 1  # Assuming 1 is for 'Published'
+        form.initial['excerpt'] = 'Fished It, Mate'
+        form.initial['status'] = 1
         return form
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        # Ensure slug is set from the title
         form.instance.slug = slugify(form.cleaned_data['title'])
         if not form.instance.excerpt:
             form.instance.excerpt = form.instance.content[:100] + '...'
-        messages.success(self.request, "Your blog post was created successfully!")   
+        messages.success(
+            self.request,
+            "Your blog post was created successfully!"
+        )
         return super().form_valid(form)
+
 
 class BlogUpdateView(LoginRequiredMixin, UpdateView):
     model = Blog
@@ -98,18 +108,20 @@ class BlogUpdateView(LoginRequiredMixin, UpdateView):
     def get_form(self, form_class=None):
         form = super().get_form(form_class)
         if not form.initial.get('excerpt'):
-            form.initial['excerpt'] = 'Fished It, Mate'  # Set to an empty string instead of 'Default excerpt'
+            form.initial['excerpt'] = 'Fished It, Mate'
         if not form.initial.get('status'):
             form.initial['status'] = 1  # Assuming 1 is for 'Published'
         return form
 
     def form_valid(self, form):
-        messages.success(self.request, "Your blog post was updated successfully!")
+        messages.success(
+            self.request, "Your blog post was updated successfully!"
+        )
         return super().form_valid(form)
 
-def home_page(request):
-    return render(request, 'home.html')  # This will render the home.html template
 
+def home_page(request):
+    return render(request, 'home.html')  # This will render home.html template
 
 
 def blog_post(request, slug):
@@ -124,7 +136,8 @@ def blog_post(request, slug):
             comment.blog = blog
             comment.save()
             messages.add_message(
-                request, messages.SUCCESS,
+                request,
+                messages.SUCCESS,
                 'Comment submitted and awaiting approval'
             )
 
@@ -138,24 +151,31 @@ def blog_post(request, slug):
         'comment_count': comment_count,
     })
 
+
 # Edit view
 def blog_edit(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
-    
+
     # Ensure that the logged-in user is the author of the blog
     if blog.author != request.user:
-        return HttpResponseForbidden("you're fishing in the wrong place...You do not have permission to edit this post.")
-    
+        return HttpResponseForbidden(
+            "You're fishing in the wrong place... You do not have permission"
+            " to edit this post."
+        )
+
     if request.method == 'POST':
         form = BlogForm(request.POST, request.FILES, instance=blog)
         if form.is_valid():
             form.save()
-            messages.success(request, "Your blog post was updated successfully!")
-            return redirect('blog_post', slug=blog.slug)  # Redirect to the updated post
+            messages.success(
+                request, "Your blog post was updated successfully!"
+            )
+            return redirect('blog_post', slug=blog.slug)
     else:
         form = BlogForm(instance=blog)
-    
+
     return render(request, 'blog/blog_edit.html', {'form': form, 'blog': blog})
+
 
 # Delete view
 def blog_delete(request, slug):
@@ -163,11 +183,14 @@ def blog_delete(request, slug):
 
     # Ensure that the logged-in user is the author of the blog
     if blog.author != request.user:
-        return HttpResponseForbidden("you're fishing in the wrong place...You do not have permission to delete this post.")
-    
+        return HttpResponseForbidden(
+            "You're fishing in the wrong place... You do not have permission"
+            " to delete this post."
+        )
+
     if request.method == 'POST':
         blog.delete()
         messages.success(request, "Your blog post was deleted successfully.")
-        return redirect('blog_list')  # Redirect to the blog list after deletion
-    
+        return redirect('blog_list')
+
     return render(request, 'blog/blog_delete.html', {'blog': blog})

@@ -2,21 +2,23 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import DetailView, UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
-from allauth.account.views import SignupView  # Importing SignupView from AllAuth
+from allauth.account.views import SignupView  # Import SignupView from AllAuth
 from .models import Profile
 from .forms import ProfileForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
+
 class CustomSignupView(SignupView):
     def form_valid(self, form):
         response = super().form_valid(form)
-        return redirect(reverse('profile_create'))  # Redirect to profile creation page
+        return redirect(reverse('profile_create'))  # Redirect to page
+
 
 class ProfileDetailView(DetailView):
     model = Profile
     template_name = 'profiles/profile_detail.html'
-    context_object_name = 'profile'  # This allows you to reference the profile in the template
+    context_object_name = 'profile'  # reference profile in the template
 
     def get_object(self, queryset=None):
         # Get the profile using slug from URL
@@ -27,8 +29,9 @@ class ProfileDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         # Add blogs written by the user associated with the profile
         user = self.object.user  # The user linked to the profile
-        context['blogs'] = user.blog_posts.filter(status=1)  # Fetch only published blogs
+        context['blogs'] = user.blog_posts.filter(status=1)  # only published
         return context
+
 
 class ProfileCreateView(LoginRequiredMixin, CreateView):
     model = Profile
@@ -37,13 +40,22 @@ class ProfileCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('profile_detail')
 
     def form_valid(self, form):
-        form.instance.user = self.request.user  # Associate the profile with the logged-in user
-        messages.success(self.request, "Your profile has been created successfully!")
+        form.instance.user = self.request.user  # profile with logged-in user
+        messages.success(
+            self.request,
+            "Your profile has been created successfully!"
+        )
         return super().form_valid(form)
 
     def get_success_url(self):
-        # Redirect to profile detail using the newly created profile's slug
-        return reverse_lazy('profile_detail', kwargs={'slug': self.object.slug})
+        """
+        Redirect to profile detail using the newly created profile's slug
+        """
+        return reverse_lazy(
+            'profile_detail',
+            kwargs={'slug': self.object.slug}
+        )
+
 
 class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = Profile
@@ -52,29 +64,34 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     success_url = '/profiles/'
 
     def form_valid(self, form):
-        messages.success(self.request, "Your profile has been updated successfully!")
+        messages.success(
+            self.request,
+            "Your profile has been updated successfully!"
+        )
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('profile_detail', kwargs={'slug': self.object.slug})
+        return reverse_lazy(
+            'profile_detail',
+            kwargs={'slug': self.object.slug}
+        )
 
     def get_object(self, queryset=None):
         # Override to get the profile for the logged-in user
         return get_object_or_404(Profile, user=self.request.user)
 
+
 class ProfileDeleteView(LoginRequiredMixin, DeleteView):
     model = Profile
     template_name = 'profiles/profile_confirm_delete.html'
-    success_url = reverse_lazy('home')  # Redirect after deletion; adjust as needed
+    success_url = reverse_lazy('home')  # Redirect after deletion
 
     def form_valid(self, form):
-        messages.success(self.request, "Your profile has been deleted successfully!")
+        messages.success(
+            self.request,
+            "Your profile has been deleted successfully!"
+        )
         return super().form_valid(form)
 
     def get_object(self, queryset=None):
         return get_object_or_404(Profile, user=self.request.user)
-
-
-
-
-
