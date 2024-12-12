@@ -207,7 +207,9 @@ I also looked at the [Accessibility and Compliance checker](https://www.accessib
 ![Acces Check](documentation/testing/04_access_check.png)
 ![Acces Check](documentation/testing/05_access_check.png)
 
-
+<hr>
+<br>
+<br>
 
 ## Manual Testing
 
@@ -215,22 +217,74 @@ I also looked at the [Accessibility and Compliance checker](https://www.accessib
 
 Testing was carried out on desktop using a Chrome browser to ensure all forms take the intended input and process the input appropriately.
 
-| Feature | Tested? | User Input required | User Feedback Provided | Pass/Fail | Fix |
+| Feature | Tested? | User Input Required | User Feedback Provided | Pass/Fail | Fix |
 | ------- | ------- | ------------------- | ---------------------- | --------- | --- |
 | Navbar | Yes | Click | The user is directed to the specific page as intended | Pass | - |
-| Register Page | Yes | Username/Password. Email is optional | Empty username and password fields prompt the user. [username/password](documentation/testing/password_similar.png) too similar, password too short | Pass | - |
-| Login | Yes | Username and Password | Username and Password must be exactly as originally registered. User notified once successfully signed in. | Pass | - |
-| Search Field | Yes |Any input accepted but Search results are tailored to Location, Category, and Post title. | Users will be presented with the results of their search. If no results are found the user receives [this](documentation/testing/search_feedback.png) feedback | Pass | - |
-| Blog Post Links | Yes | Click | User is taken to intended location via a new tab | Pass | - |
-| Add Post (Registered User) | Yes | Mixture of image and text fields. | Business name, Post Content and Location are required fields. User is redirected back to the Business name field if not entered when trying to post. User receives [this](documentation/testing/add_post_mt_loc.png) if location field is blank. User receives [this](documentation/testing/add_post_mt_content.png) if content field is left blank. Once completed the User is notified that the Post will be published after it has been reviewed by the Happy Heath team | Pass | - |
-| Comment Box (Registered User) | Yes | Text input accepted | User is thanked for their comment | Pass | - |
-| Edit Comment (Registered, Author) | Yes | Click button to choose Edit | Comment appears in comment box for update and update button appears underneath. When pressed the user is infomred that the comment has been updated | Pass | - |
-| Delete Comment (Registered, Author) | Yes | Click button to choose Delete comment | A [modal](documentation/testing/comment_delete_modal.png) pops up asking the user if they are sure they want to delete their comment | Pass | - |
+| Register Page | Yes | Username/Password. Email is optional | Empty username and password fields prompt the user. too similar, password too short | Pass | - |
+| Sign in | Yes | Username and Password | Username and Password must be exactly as originally registered. User notified once successfully signed in. [sign in](documentation/testing/40_feedback_profilesignin.webp) [sign in](documentation/testing/41_Feedback_profilesign.webp)  | Pass | - |
+| Terms and conditions | Yes | Read terms and Conditions | User must read the Terms and Conditions provided to successfully register. [Terms and Conditions](documentation/testing/48_Feedback_terms1.webp) | Pass | - |
+| Terms and conditions | Yes | Pop up after clicking read | User must accept the Terms and Conditions provided to successfully register. [Terms and Conditions](documentation/testing/50_Feedback_terms2.webp) | Pass | - |
+| Search Field | Yes | Any input accepted but Search results are tailored to keyword | Users will be presented with the results of their search. If no results are found, the user receive feedback | Pass | - |
+| Blog Post Links | Yes | Click | User is taken to the intended location | Pass | - |
+| Add Post (Registered User) | Yes | Mixture of image and text fields | Only users who have registered and created a profile can now see the 'add blog post' link. Once clicked they are taken to a page to allow them to add a title, content, image, tpye of fish and fishing method [from a dropdown menu], once created they recieve a message [Create blog](documentation/testing/39_Feedback_blogcreate.webp)  | Pass | - |
+| Comment Box (Registered User) | Yes | Text input accepted | User is thanked for their comment and awaiting approval [Comment approval](documentation/testing/51_Feedback_comment1.webp) | Pass | - |
+| Edit Comment (Registered, Author) | Yes | Click button to choose Edit | Comment appears in comment box for update, and update button appears underneath. When pressed, the user is informed that the comment has been updated | Pass | - |
+| Delete Comment (Registered, Author) | Yes | Click button to choose Delete comment | A feedback message pops up asking the user if they are sure they want to delete their comment | Pass | - |
 | Edit Post (Registered, Author) | Yes | Image/Text fields | Changes made to post are saved and displayed. The user is informed that the post has been updated successfully | Pass | - |
-| Delete Post (Registered, Author) | Yes | Click Confirm Delete button or cancel | Post is deleted and user is returned to home page | Pass | - |
-| Log Out | Yes | Click Logout in the navigation menu | User is signed out and confirmation message appears at the top of the screen | Pass | - |
-| Contact Form | Yes | Text Fields | Users will get [feedback](documentation/testing/contact_form_input_req.png) if they try to submiy without filling in the required fields. Once submitted successfully the user will receive a notification at the top of the page | Pass | - |
-| Footer icons | Yes | Click | Icons take the user to the intended location via a new tab | Pass | - |
+| Delete Post (Registered, Author) | Yes | Click Confirm Delete button or Cancel | Post is deleted, and user is returned to the home page [blog delete](documentation/testing/44_Feedback_blogdelete.png)| Pass | - |
+| Create Profile | Yes | Bio, content, Profile Image, fish and fishing method | User is notified that their profile has been successfully created and redirected to their profile page  | Pass | - |
+| Profile Sign In | Yes | Username and Password | User is notified that they have signed into their profile successfully and redirected to their profile page | Pass | - |
+| Profile Update | Yes | Updated profile fields Bio, content, Profile Image, fish and fishing method | User receives confirmation that their profile has been updated successfully | Pass | - |
+| Profile Deletion | Yes | Click Confirm Delete button | User receives a confirmation message that their profile has been deleted, and they are redirected to the home page [Profile delete](documentation/testing/46_Feedback_profiledelete.webp) | Pass | - |
+| Message System Notifications | Yes | Interaction triggering notifications (e.g., successful login, logout, post creation) | User receives appropriate feedback messages for actions (e.g., "Profile created successfully," "Post deleted successfully") | Pass | - |
+| Log Out | Yes | Click Logout in the navigation menu | User is signed out, and a confirmation message appears at the top of the screen  | Pass | - |
+| Footer Icons | Yes | Click | Icons take the user to the intended location via a new tab | Pass | - |
+
+<hr>
+
+### Testing Features for Fished It Mate
+
+All features of the **Fished It Mate** website were tested across multiple devices and environments to ensure functionality met the expected outcomes. The following table outlines the features tested, their functionality, and results.
+
+| Feature                          | Acceptance Criteria Met? | Tested | Response                                                                                         | Pass/Fail | Fix     |
+|----------------------------------|---------------------------|--------|-------------------------------------------------------------------------------------------------|-----------|---------|
+| View Home Page                   | Yes                       | Yes    | Home page loads correctly, displays the welcome message, and includes links to other sections   | Pass      | -       |
+| User Registration                | Yes                       | Yes    | Users can register with a valid email and password. Error messages displayed for invalid input  | Pass      | -       |
+| User Login                       | Yes                       | Yes    | Registered users can log in, and are redirected to the dashboard                                | Pass      | -       |
+| User Logout                      | Yes                       | Yes    | Users can log out successfully and are redirected to the home page                              | Pass      | -       |
+| View Fishing Spots               | Yes                       | Yes    | Fishing spots list is displayed with correct filters and sorting functionality                 | Pass      | -       |
+| Add Fishing Spot (Logged In User)| Yes                       | Yes    | Logged-in users can add a new fishing spot with required details, including photos              | Pass      | -       |
+| Edit Fishing Spot (Owner Only)   | Yes                       | Yes    | Owners can edit details of the fishing spots they added                                         | Pass      | -       |
+| Delete Fishing Spot (Owner Only) | Yes                       | Yes    | Owners can delete the fishing spots they added                                                  | Pass      | -       |
+| Leave a Review                   | Yes                       | Yes    | Logged-in users can leave a review on a fishing spot, with proper input validation              | Pass      | -       |
+| View Reviews                     | Yes                       | Yes    | Users can view all reviews for a fishing spot                                                   | Pass      | -       |
+| Like/Unlike a Fishing Spot       | Yes                       | Yes    | Users can like/unlike fishing spots, and the like count updates in real-time                   | Pass      | -       |
+| Filter Fishing Spots             | Yes                       | Yes    | Filters (e.g., location, fish types) work as expected                                           | Pass      | -       |
+| View User Profile                | Yes                       | Yes    | Users can view their profile and see their saved spots, reviews, and likes                     | Pass      | -       |
+| Edit Profile Information         | Yes                       | Yes    | Users can update their profile details (e.g., username, profile picture)                       | Pass      | -       |
+| Save Fishing Spots to Favorites  | Yes                       | Yes    | Users can save fishing spots to a favorites list                                                | Pass      | -       |
+| Responsive Design                | Yes                       | Yes    | Website is responsive and displays correctly on desktop, tablet, and mobile devices            | Pass      | -       |
+| Accessibility Features           | Yes                       | Yes    | All buttons, forms, and images have alt tags, labels, and are keyboard-navigable               | Pass      | -       |
+| Error Pages                      | Yes                       | Yes    | 404 and 500 error pages are custom-designed and informative                                     | Pass      | -       |
+
+<hr>
+
+### Dev Tools/Real World Testing
+
+Using Dev tools and real world testing using friends and colleagues for responsive issues. All tests were worked through over the course of the project and at the end passed all the devices and screen sizes looked at. Links worked, navigationa and creating the custom features of Profile and blog posts functioned effectively. All dev tools tests were conducted via Chrome and also Safari for consistency. 
+
+Tested devices
+
+|   Device   |  Features  |  Issues  |   fix  |
+|------------|------------|----------|--------|
+| iphone 13-15| All       | None   |   not needed |
+| ipad Air  | All     | None   |  not needed |
+| Macbook pro | All    |  None   |  not needed |
+| iMac     |  All    |  None   |  not needed |
+| Microsoft Surface | All   | None  |  not needed |
+
+
+<hr>
 
 ### Browser Compatibility 
 
@@ -243,35 +297,124 @@ Happy Heath was tested on the following browsers. New users were created and old
 <hr>
 
 
+## Errors and Bugs
+<br>
+<details>
+<summary>Debug = True</summary>
+<br>
+
+An error which I need reminding about...`Debug=True`. This has got me a few times, especially with the styling aspects, and always after I git push notice I didn't set back to False.
+<br>
+<img src="documentation/images/07_debug_true.webp">
+<br>
+
+Not so much an error and more a precaution *or better workflow* decided to use a branch moving into the build stages to keep flow and then merge to main with changes that work.
+Created a barnch : `git switch -c branchname`, then `git push --set-upstream origin martinapp` for the first push so REMOTE knows it exists.
+
+Then for merging use: switch to the main - `git checkout main`, pull the changes from the REMOTE main branch - `git pull`. Switch back to the local `git checkout martinapp`, merge this local branch into the local new branch `git merge main`. Resolve any conflicts then *git add and commit* and finally push. Then being my own repo I need do the pull requests.
+
+<br>
+<img src="documentation/images/08_branch.webp">
+<br>
+</details>
+<br>
+<details>
+<summary>Server Error (500)</summary>
+<br>
+
+Part 1
+
+Heroku threw up an early bug after I had made some changes to my views and changing the index.html to base.html. 
+My first error was for `DISABLE_COLLECTSTATIC=1` and couldn't perform the Build:
+
+Error: Unable to generate Django static files.
+ !     
+ !     The 'python manage.py collectstatic --noinput' Django
+ !     management command to generate static files failed.
+ !     
+ !     See the traceback above for details.
+ !     
+ !     You may need to update application code to resolve this error.
+ !     Or, you can disable collectstatic for this application:
+ !     
+ !        $ heroku config:set DISABLE_COLLECTSTATIC=1
+ !     
+ !     https://devcenter.heroku.com/articles/django-assets
+
+This was after changing me DEBUG to DEBUG = ‘DEBUG’ in os.environ
+However looking at the *view logs* there was another error for 'comments'. This was due to adding the comments register in admin...before I had setup the model for it:
+```
+from django.contrib import admin
+from .models import Blog, Comment
+
+# Register your models here.
+admin.site.register(Blog)
+admin.site.register(Comment)
+```
+I amended this code and pushed. And then recieved a Server error 500.
+
+Part 2
+
+My first concern was the DEBUG, however I realised I had renamed my template>index.html to base.html to keep consistent with the project, and not become confusing. However I had NOT changed this in the views.py so changed it for the TemplateView:
+
+```
+class HomePage(TemplateView): 
+    """
+    Displays home page"
+    """
+    template_name = 'base.html'
+```
+
+Now when I build again the build goes through and no errors!
+</details>
+<br>
+
+<details>
+<summary>Template issue - make sure to add {% load static %}</summary>
+<br>
+
+After changing the styling for the blog_list.html from a basic page to something more interesting Into to some errors:
+
+<br>
+<img src="documentation/images/13_static_error.webp">
+<br>
+
+At first I thought this was an error with the if statement but turned out to be the {% load static %} was missing
+</details>
+<br>
+
+<details>
+<summary>Template issue - semantic error</summary>
+<br>
+
+Again I encountered some consistent error messaging throughout and this highlights a common and persisntent friend - naming the files and then using the correct naming for the connections. Here I used 'post' instead of 'blog' and it threw the page completely out. A simple correction brought me back and had an amazing sense of accomplishment when the page poaded to the new format.
+
+<br>
+<img src="documentation/images/14_naming_error.webp">
+<br>
+<br>
+<img src="documentation/images/14_naming_error2.webp">
+<br>
+
+<br>
+<img src="documentation/images/15_blog_list_resolved.webp">
+<br>
+
+</details>
+<br>
+
+AllAuth error - lost </form> end tag which threw the whole site off when trying to linnk the login/logout/signup functionality. Base.html had a missing end tag for the form so it was acting like a GET request rather than a POST request.
+
+
+Edit comments - mismatch error. Due to separating the apps the connetion need some javascript but the link didn't match and needed changing in the javascript code.
+
+
+
+<hr>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<p>
-    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px"
-            src="http://jigsaw.w3.org/css-validator/images/vcss"
-            alt="Valid CSS!" />
-    </a>
-</p>
-
-<p>
-<a href="http://jigsaw.w3.org/css-validator/check/referer">
-    <img style="border:0;width:88px;height:31px"
-        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
-        alt="Valid CSS!" />
-    </a>
-</p>
+<p align="right"><a href="#contents">Back To Top</a></p>
