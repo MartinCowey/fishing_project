@@ -6,16 +6,22 @@
   - [CSS](#css-validation)
   - [Javascript](#javascript-validation)
   - [Python](#python-validation)
+  - [lighthouse](#lighthouse-scores)
+  - [Wave](#wave-accisibility-evaluation)
+  - [Accessible and Compliant checker](#accessible-and-compliant-checker)
+  - [Accessible and Compliant checker](#accessible-and-compliant-checker)
+  - [Accessible and Compliant checker](#accessible-and-compliant-checker)
+  - [Accessible and Compliant checker](#accessible-and-compliant-checker)
    
 
-- [Models](#models-)
+- [Maunual Testing](#models-)
   - [Database Schema](#database-schema)
   - [All Auth](#allauth-user-model)
   - [Blog](#blog-model)
   - [Comments](#comment-model)
   - [Custom](#custom-model)
     - [Profile custom 1](#profile-model---custom-1)
-    - [Location custom 2](#location-model---custom-2)
+    - [Accessible and Compliant checker](#location-model---custom-2)
 
 
 ## Validation
@@ -209,7 +215,10 @@ I also looked at the [Accessibility and Compliance checker](https://www.accessib
 
 <hr>
 <br>
-<br>
+<hr>
+
+
+<p align="right"><a href="#contents">Back To Top</a></p>
 
 ## Manual Testing
 
@@ -295,6 +304,9 @@ Happy Heath was tested on the following browsers. New users were created and old
 - Safari v18.1.1
 
 <hr>
+
+
+<p align="right"><a href="#contents">Back To Top</a></p>
 
 
 ## Errors and Bugs
@@ -413,8 +425,39 @@ Edit comments - mismatch error. Due to separating the apps the connetion need so
 <hr>
 
 
+<p align="right"><a href="#contents">Back To Top</a></p>
+
+### Custom App errors and bugs
+
+I came across a lot of errors during the custom element as I'm new to Django and to programming, I had a lot of discussion with perplexity ai and trying to make sure I was following procedures correctly for my models, views, and urls etc. However with a lot of moving parts I did lose track of myself a great deal. In the beginning I was rather blind in this process with the Code Institute walkthrough [previously] the only exposure to Django I had been through. I relied heavily on the coding coaches - John, Roo and Mark, but soon began to notice certai messages and usual patterns that occured *as listed below*. As I built confidence I was managing to use stack overfow and other sources to combine my previous learning with perplexity into more coherent paths to take. i realised ealry on that the real fun here was to solve errors. One of my first decisiond was to use a branchn in my workspace so it meant I had manageable tolerance on my exploration, however in retrospect what I now realise is there isn't a lot of commit history surounding these errors. Here are just a few of the more problematic challenges I had to overcome, amongst what felt like one big error solving session. Unfortunately this means there isn't a history of commit messages for 'Fix', which is something I will adhere to in the future.
 
 
+
+| Error/Issue | Description | Area Affected | Attempted Solutions | Final Solution | commit |
+|-------------|-------------|---------------|---------------------|----------------|--------|
+| NoReverseMatch: 'profile_detail' | Error when trying to access user profile page using `user.profile.slug` | URL Configuration, Profile App | Checked URL patterns, view functions | Added `slug` field to Profile model and updated URL patterns to use `slug` instead of `pk` | [be89f9a](https://github.com/MartinCowey/fishing_project/commit/be89f9a5913c0e7a8c9372e4c976560a082e644f)           |
+| IntegrityError: NOT NULL constraint failed | Occurred when saving a new blog post without an author | Blog App, Models | Tried setting default author in model | Modified view to automatically set the logged-in user as the author before saving |[be89f9a](https://github.com/MartinCowey/fishing_project/commit/be89f9a5913c0e7a8c9372e4c976560a082e644f)           |
+| TemplateDoesNotExist | Django couldn't find the specified template for rendering | Template System | Checked template directories, naming | Corrected template location and ensured proper naming convention in views | na  |
+| AttributeError: 'User' object has no attribute 'profile' | Error when trying to access user profile | User Authentication, Profile App | Checked if profile was created for all users | Implemented post_save signal to create a profile for each new user automatically | na           |
+| Form validation errors | Custom form fields not validating correctly | Forms, Blog App | Adjusted form field definitions | Implemented clean methods in form class to add custom validation logic | [e755f8d](https://github.com/MartinCowey/fishing_project/commit/e755f8d30728fb9b8a8ca7a0c0de62e214c43a76)           |
+| Static files not loading | CSS and JavaScript files not being served in production | Static File Handling | Checked STATIC_URL and STATIC_ROOT settings | Ran `collectstatic`, configured web server to serve static files correctly | [fd2d17b](https://github.com/MartinCowey/fishing_project/commit/fd2d17b6953efbe20a251bd96cca3c68644aa229)     |
+
+
+### Errors Encountered and Resolutions
+
+| Error/Issue              | Description                                                                                          | Area Affected          | Attempted solutions                                                                                                    | Final Solution                                                                                                      |
+|--------------------------|------------------------------------------------------------------------------------------------------|------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| URL Pattern Conflict     | Search URL was mistakenly matching another URL due to the order of URL patterns in `urls.py`.       | Blog Search and Posts  | Rearranged URL patterns to test which was conflicting. Added `debug=True` for detailed error output.          | Re-ordered the `urls.py` patterns, ensuring more specific paths were listed before more generic ones.        |
+| Profile Model Issue      | The `Profile` model was not saving properly, resulting in `null` values for some fields.            | Profile App            | Verified model fields, tried default values, and re-ran migrations.                                           | Fixed the issue by adding `blank=True` and `null=True` to optional fields in the model, then re-migrating.   |
+| Blog Author Assignment   | Blog posts were not associating with the logged-in user correctly.                                   | Blog Post Creation     | Checked `views.py`, debugged user context in the request, and tested form submission with dummy data.         | Updated the `Blog` model and `views.py` to explicitly assign the logged-in user to the `author` field.       |
+| TemplateDoesNotExist     | Received a "TemplateDoesNotExist" error for `base.html` when extending templates.                    | Template Rendering     | Verified the templates directory structure and `settings.py` template directory.                              | Corrected the directory path in `TEMPLATES['DIRS']` and ensured files were in the correct subdirectory.      |
+| ForeignKey Integrity     | Deleting a user caused associated blog posts to throw integrity errors due to missing relationships. | Blog and Profile Models | Tried adding `on_delete=models.CASCADE` and tested alternate deletion policies.                                | Added `on_delete=models.SET_NULL` for the `author` field in the blog model to handle cases of deleted users. |
+| Form Validation Error    | Blog creation form was failing to validate image uploads and required fields.                       | Blog Post Creation     | Debugged form submission process and reviewed `forms.py`.                                                    | Added custom validation logic to check for uploaded image file formats and updated required field handling.  |
+| CSRF Token Missing       | "CSRF token missing or incorrect" error when submitting a blog post.                                | Blog Post Creation     | Verified the presence of `{% csrf_token %}` in templates, checked middleware, and re-tested forms.           | Ensured `{% csrf_token %}` was included in the form and middleware was enabled in `settings.py`.            |
+| Profile View Error       | Error when fetching profiles for users without complete data.                                       | Profile App            | Debugged the `get_object_or_404` call and ensured proper data handling in the `views.py`.                     | Added error handling for missing data and default fallbacks in the `Profile` model.                         |
+| Pagination Bug           | Pagination in blog posts was breaking for pages with no content.                                   | Blog Post Listing      | Tested different pagination sizes and debugged `paginator.page()`.                                            | Added a fallback view to handle empty pages gracefully using `EmptyPage` exception handling.                |
+
+<hr>
 
 
 <p align="right"><a href="#contents">Back To Top</a></p>
