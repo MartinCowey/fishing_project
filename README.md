@@ -8,11 +8,12 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
 <br>
 <hr>
 
-
+![Logo](documentation/logo/05_website_view.webp) 
+<hr>
 
 <p align="center">
   <a href="https://github.com/MartinCowey">
-    <img src="documentation/logo/04_logo_fish_B.webp" alt="Logo" height="200">
+  
   </a>
 
   <h2 class="port" align="center">Developer: Martin Cowey</h2>
@@ -127,7 +128,59 @@ as the normal font colour wasn't passing the contrast checker:
 - Intuitive and inclusive User Interface, and desing strategy for CRUD functionalities.
 - A UX applied website with a good solid responsive application remaining the same across mobile, tablet or desktop
 - Future features ready for growing and meeting client/user needs.
+- Current blogs have ai generated content, and also original User generated content for testing and viewing
 
+## UX
+
+The UX development for this Django blog project has been structured using the 5 planes of UX design, which hopefully provide a comprehensive framework for creating the user-centered experience. Here's a summary of how these planes applied to my project:
+
+-Strategy Plane
+
+The foundation of my blog's UX design lies in the strategy. For this Django blog, the primary goals are:
+- Allow users to create and manage their profiles
+- Enable users to create, read, update, and delete blog posts
+- Provide an easy-to-navigate, responsive design
+- User needs include easy account creation, profile customization, blog post management, and seamless site navigation
+
+-Scope Plane
+
+The scope of my Django blog includes the following key features:
+- User authentication (registration, login, logout)
+- Profile CRUD functionality
+- Blog post CRUD functionality
+- Image upload for blog posts
+- Commenting system
+- Responsive design for various devices
+These features align with the user stories developed, ensuring that the project meets both user needs and business objectives.
+
+-Structure Plane
+
+The structure of my blog will focus on organizing content and functionality logically. Creating an information architecture that includes:
+- Home page with featured or recent blog posts
+- User dashboard for managing profile and posts
+- Individual blog post pages
+- Profile pages
+- Navigation menu for easy access to key features
+This structure supports intuitive user flows, such as from creating a post to commenting or from viewing a profile to reading that user's blog posts.
+
+-Skeleton Plane
+
+My wireframes should outline:
+- Layout of each page type (home, blog post, profile, etc.)
+- Placement of navigation elements
+- Location of key features like login/logout buttons
+- Content areas for blog posts and comments
+These wireframes - [Wireframes](#wireframes) show the interface design, with a base for where all elements are positioned to support user tasks efficiently.
+
+-Surface Plane
+
+For the final visual design: *After the site was finished*
+- Develop a consistent color scheme and typography that aligns with the blog's purpose
+- Create visually appealing buttons and interactive elements, with user feedback
+- Ensure readability of blog posts on various screen sizes
+- Implement responsive design techniques for seamless mobile experience
+- Use appropriate whitespace to enhance content legibility and overall aesthetics
+I tried to apply the visual design consistently across all pages to maintain a cohesive user experience
 
 ## Agile Methodologies - Project Management
 
@@ -495,6 +548,31 @@ CSRF : Cross-Site Request Forgery
 
 ![Languages used](documentation/testing/03_languages_used.png)
 
+### Librairies and Framworks:
+
+- asgiref==3.8.1
+- cloudinary==1.41.0
+- crispy-bootstrap5==0.7
+- dj-database-url==0.5.0
+- dj3-cloudinary-storage==0.0.6
+- Django==4.2.16
+- django-allauth==0.57.2
+- django-crispy-forms==2.3
+- django-summernote==0.8.20.0
+- django-widget-tweaks==1.5.0
+- gunicorn==20.1.0
+- oauthlib==3.2.2
+- psycopg==3.2.3
+- PyJWT==2.10.1
+- python3-openid==3.2.0
+- requests-oauthlib==2.0.0
+- sqlparse==0.5.2
+- urllib3==1.26.20
+- whitenoise==5.3.0
+
+
+you can see all these in my [requirements.txt](requirements.txt)
+
 ### Python Modules Imported
 
 [Django-allauth](https://pypi.org/project/django-allauth/) is a package that offers a Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication. This is curcial for the blog and the custom profile was made as an extension of the Admin. `pip3 install Django~=4.2.1`
@@ -517,7 +595,7 @@ CSRF : Cross-Site Request Forgery
 
 [Django Widget Tweaks](https://pypi.org/project/django-widget-tweaks/) is a Django application that allows you to Tweak the form field rendering in templates, not in python-level form definitions. Altering CSS classes and HTML attributes is supported. `pip install django-widget-tweaks`
 
-## Future Features
+## Future Features - more
 
 As the project progressed I realised my MVP was met in the first week, so began work on my custom apps quite quickly. There are a few more features that either need to be added or could be aded at a later day:
 
@@ -546,9 +624,6 @@ Please find Testing and Validation for my project and custom apps in the [TESTIN
 
 # Acknowledgements
 
-This has been an amazing journey, 16 weeks on the Code Institute bootcamp and all that learning and intensity culminates into this project. I have thoroughly enjoyed every minute of it...even when I picked that scratch of wallpaper and the whole wall came down! I feel a sense of pride in this achievement and obviously have had a lot of support and help through all of this. It goes without saying that using the internet and Perplexity as a learning tool to discuss and conceptualise ideas. Have a real deep dive into problems to help fast track solutions. I by no means feel like I know what i would like to know, and after having 6 weeks of Python and Django we took on a massive task. However using this technology, mixed in with the plethora of resources avaliable, I was able to take concepts and move with them, shape them, without having to have a deeper understanding of all the requirements. This is about problem solving...and I like to discuss my thoughts..so being able to have that allowed me to get to the next level.
-
-The people I would like to thank know who they are. But certainly my cohorts on the course: [Laura]https://github.com/laurachri-hall, [Tayla](https://github.com/TaylaJBall), and certainly [Heath]https://github.com/Heath1979 for their support and ear to bend [which I realise was wuite a lot]. Also the support from code Institute was above and beyond, [Amy](https://github.com/amylour) for always listening and offering me a reset, ready and let's go again. [John](https://github.com/johnrearden) for the immense patience and knowledge you have, you went out of your way to help me and give me an immense sense of accomplishment...and it was good to sit and chat, and discover new bugs you had never seen before [like gazing through a telescope and finding undiscovered stars] "we shall call this one...the Martin Bug". Also [Mark](https://github.com/mbriscoe) for his help and advice and encouragement. We were truly blessed on this course with the people we were around. Also to the rest of the cohort for getting involved and supporting one another along the way.
 
 This has been an amazing journey! 16 weeks on the Code Institute bootcamp and all that learning and intensity culminates in this project. I have thoroughly enjoyed every minute of it... even when I picked that scratch of wallpaper and the whole wall came down! I feel a sense of pride in this achievement and have, of course, received a lot of support and help throughout.
 
