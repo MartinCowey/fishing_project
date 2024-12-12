@@ -216,7 +216,7 @@ For the final visual design: *After the site was finished*
 - Ensure readability of blog posts on various screen sizes
 - Implement responsive design techniques for seamless mobile experience
 - Use appropriate whitespace to enhance content legibility and overall aesthetics
-I tried to apply the visual design consistently across all pages to maintain a cohesive user experience
+I tried to apply the visual design consistently across all pages to maintain a cohesive user experience - I actually stayed quite similar to my initial design, and perhaps just checnged the initial search bar into the middle, and had a home page rather than into blogs. I was focused on keeping my colours and fonts and design as congruent to me UX phases as possible.
 
 ## Agile Methodologies - Project Management
 

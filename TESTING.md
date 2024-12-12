@@ -22,6 +22,7 @@
   - [Custom App errors and bugs](#custom-app-errors-and-bugs)
   - [Errors Encountered and Resolutions](#errors-encountered-and-resolutions)
 
+![Static Badge](https://img.shields.io/badge/commits-213-blue)
 
 ## Validation
 
