@@ -56,21 +56,55 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
   - [Colour Scheme](#colour-scheme)
   - [Fonts](#fonts)
 - [Project Planning](#project-planning)
+  - [Site Goals](#site-goals)
 - [UX](#ux)
+  - [Strategy Plane](#strategy-plane)
+  - [Scope Plane](#scope-plane)
+  - [Structure Plane](#structure-plane)
+  - [Skeleton Plane](#skeleton-plane)
+  - [Surface Plane](#surface-plane)
 - [Agile Methodologies - Project Management](#agile-methodologies---project-management)
-  - [MoSCoW Prioritization](#moscow-prioritization)
+  - [MoSCoW Prioritisation](#moscow-prioritisation)
   - [User Stories](#user-stories)
-- [Wireframes](#wireframes)
-  - [Desktop](#desktop)
-  - [Tablet](#tablet)
-  - [Mobile](#mobile)
+  - [Wireframes](#wireframes)
+    - [Desktop](#desktop)
+    - [Tablet](#tablet)
+    - [Mobile](#mobile)
 - [Models](#models)
   - [Database Schema](#database-schema)
   - [Allauth User Model](#allauth-user-model)
   - [Blog Model](#blog-model)
   - [Comment Model](#comment-model)
-  - [Profile Model - custom //1](#profile-model---custom-1)
-  - [Location Model - custom //2](#location-model---custom-2)
+  - [Custom Models](#custom-models)
+    - [Profile Model](#profile-model---custom-1)
+    - [Location Model](#location-model---custom-2)
+- [Future Features](#future-features)
+  - [Search Feature](#search-feature)
+  - [Search Feature 2](#search-feature-2)
+  - [Password Reset with Email Validation](#password-reset-with-email-validation)
+  - [Messaging System/Ticket System](#messaging-systemticket-system)
+  - [Sharing](#sharing)
+  - [Favourites](#favourites)
+- [Deployment](#deployment)
+  - [Heroku](#heroku)
+  - [Database](#database)
+- [Apps and Models](#apps-and-models)
+  - [Blog](#blog)
+  - [Admin](#admin)
+- [Procedure](#procedure)
+  - [Git Branch](#git-branch)
+- [Defensive Design](#defensive-design)
+  - [Languages Used](#languages-used)
+  - [Libraries and Frameworks](#libraries-and-frameworks)
+  - [Python Modules Imported](#python-modules-imported)
+- [Features](#features)
+- [User View - Registered/Unregistered](#user-view---registeredunregistered)
+- [CRUD Functionality](#crud-functionality)
+- [Testing](#testing)
+  - [TESTING.md](TESTING.md)
+- [Acknowledgements](#acknowledgements)
+- [Resources](#resources)
+
 
 </details>
 
@@ -142,7 +176,7 @@ The foundation of my blog's UX design lies in the strategy. For this Django blog
 - Allow users to create and manage their profiles
 - Enable users to create, read, update, and delete blog posts
 - Provide an easy-to-navigate, responsive design
-- User needs include easy account creation, profile customization, blog post management, and seamless site navigation
+- User needs include easy account creation, profile customisation, blog post management, and seamless site navigation
 
 -Scope Plane
 
@@ -157,7 +191,7 @@ These features align with the user stories developed, ensuring that the project 
 
 -Structure Plane
 
-The structure of my blog will focus on organizing content and functionality logically. Creating an information architecture that includes:
+The structure of my blog will focus on organising content and functionality logically. Creating an information architecture that includes:
 - Home page with featured or recent blog posts
 - User dashboard for managing profile and posts
 - Individual blog post pages
@@ -177,7 +211,7 @@ These wireframes - [Wireframes](#wireframes) show the interface design, with a b
 -Surface Plane
 
 For the final visual design: *After the site was finished*
-- Develop a consistent color scheme and typography that aligns with the blog's purpose
+- Develop a consistent colour scheme and typography that aligns with the blog's purpose
 - Create visually appealing buttons and interactive elements, with user feedback
 - Ensure readability of blog posts on various screen sizes
 - Implement responsive design techniques for seamless mobile experience
@@ -200,9 +234,9 @@ I tried to apply the visual design consistently across all pages to maintain a c
 
 <br>
 
-### MoSCoW Prioritization
+### MoSCoW Prioritisation
 
-For this project i used the MoSCoW Prioritization method to help manage the tasks:
+For this project i used the MoSCoW Prioritisation method to help manage the tasks:
 
 - **Must Haves**: this was the required MVP for the project with my first custom app being the Custom Profile. 
 - **Should Haves**: these began to add more functionality to the user experience and widen the scope further.
@@ -334,7 +368,7 @@ First we went through the process for admin then added sumernote to give more fl
 
 ### Comment Model
 
-The Comment Model gives the user the opportunity to get involved with other users posts - making it more interactive and community based. The ability to make a log for your own expereince is great but being able to share exepriences and contribute to other peoples fishing experience is a valuable piece of the website.
+The Comment Model gives the user the opportunity to get involved with other users posts - making it more interactive and community based. The ability to make a log for your own experience is great but being able to share experiences and contribute to other peoples fishing experience is a valuable piece of the website.
 
 ### custom model
 
