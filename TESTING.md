@@ -53,7 +53,11 @@ All HTML pages were validated *see below*:
 | profile_confirm_delete | 0 | 0 | 0 |
 | signin | 0 | 0 | 0 |
 | signout | 0 | 0 | 0 |
-| signup | 0 | 0 | 0 |
+| signup | 4 | 0 | 0 |
+
+I had some messages 'from' pages such as my Register page - this seems to be due to the Django/All Auth forms behind the scenes, this happened on the last day and we discussed with my peer group about having the <p> in the Python and a fix for this is to set <div> however I don't have time now to sort it for these pages as I have tested my Python and don't want to have a knock on effect with this code.. However I cannot directly change the paragragh tags and spans in this section. Looking at the Python and sorting this will be a future feature.
+
+![Register Warnings](documentation/testing/38_html_form_warning.webp)
 
 <hr>
 
@@ -173,7 +177,9 @@ Mobile Post page
 
 ![WAVE Web Accessibility Evaluation Tools](documentation/testing/06_wave.png)
 
-The WAVE report inspected various areas of the site. I cleaned up a few issues due to use of Heading tags, redundant links or not having labels, however the whole site is now inspected:
+The WAVE report inspected various areas of the site. I cleaned up a few issues due to use of Heading tags, redundant links or not having labels, however the whole site is now inspected.
+
+One thing to note was a 'redundant' link for the 'home' and the 'logo', I removed the home button from the navbar to just have the logo due to it's recommendation but feel it would be a good to have the 'home' for viewing the site and seeing a more obvious indication. 
 
 | Feature | Errors | Contrast Errors | Alerts |
 | ---- | ---- | ------- | ------ | 

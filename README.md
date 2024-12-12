@@ -150,15 +150,37 @@ as the normal font colour wasn't passing the contrast checker:
 For this project i used the MoSCoW Prioritization method to help manage the tasks:
 
 - **Must Haves**: this was the required MVP for the project with my first custom app being the Custom Profile. 
- 
 - **Should Haves**: these began to add more functionality to the user experience and widen the scope further.
 - **Could Haves**: again further scope to add more interactivity and user experience beyond me initial MVP, some of which did manage to get done
 - **Won't Haves**: these weren't adopted in my project as I wanted to give myself a more rounded scope for elements that had a possible range for the scope
 
 ### User Stories
 
- [#1](https://github.com/MartinCowey/fishing_project/issues/20) As a user, I want to navigate easily between different sections of the site for a smooth experience.
 
+| ID | User Story | MoSCoW |
+|:-:|:-|:-:|
+| [#1](https://github.com/MartinCowey/fishing_project/issues/1) | As a _User_, I can _register an account_ so that _I can engage with full site functionality_. | Must  |
+| [#2](https://github.com/MartinCowey/fishing_project/issues/2) | As a _User_, I can _manage my account settings_ so that _I can update my details and preferences_. | Must |
+| [#3](https://github.com/MartinCowey/fishing_project/issues/3) | As a _User_, I can _add my fishing location_ so that _I can track where my fishing activities took place_. | Could |
+| [#4](https://github.com/MartinCowey/fishing_project/issues/4) | As a _User_, I can _add the type of fish I have caught_ so that _I can log my fishing experiences_. | Could |
+| [#5](https://github.com/MartinCowey/fishing_project/issues/5) | As a _User_, I can _add the type of fishing method used_ so that _I can record details about my techniques_. | Could |
+| [#6](https://github.com/MartinCowey/fishing_project/issues/6) | As a _User_, I can _open a blog post_ so that _I can read detailed content shared on the platform_. | Must |
+| [#7](https://github.com/MartinCowey/fishing_project/issues/7) | As a _User_, I can _manage my blog posts_ so that _I can create, update, and delete my posts_. | Must |
+| [#8](https://github.com/MartinCowey/fishing_project/issues/8) | As a _User_, I can _comment on a blog post_ so that _I can engage with other users' posts_. | Must |
+| [#9](https://github.com/MartinCowey/fishing_project/issues/9) | As a _User_, I can _modify or delete my comment on a blog post_ so that _I have control over my contributions_. | Must |
+| [#10](https://github.com/MartinCowey/fishing_project/issues/10) | As a _User_, I can _create blog drafts_ so that _I can save my work before publishing it_. | Could |
+| [#11](https://github.com/MartinCowey/fishing_project/issues/11) | As a _Site Owner_, I can _approve comments on blog posts_ so that _only appropriate comments are displayed_. | Must |
+| [#12](https://github.com/MartinCowey/fishing_project/issues/12) | As a _User_, I can _read blog posts_ so that _I can engage with relevant content shared by others_. | Must |
+| [#13](https://github.com/MartinCowey/fishing_project/issues/13) | As a _User_, I can _manage my PROFILE account settings_ so that _I can update my details and preferences_. | Must |
+| [#14](https://github.com/MartinCowey/fishing_project/issues/14) | As a _User_, I can _register a PROFILE account_ so that _I can engage with full site functionality_. | Must  |
+| [#17](https://github.com/MartinCowey/fishing_project/issues/17) | As a _User_, I can _search for content by fishing method_ so that _I can locate posts related to specific techniques_. | Could |
+| [#18](https://github.com/MartinCowey/fishing_project/issues/18) | As a _User_, I can _search for content by type of fish_ so that _I can filter posts related to certain species_. | Could |
+| [#20](https://github.com/MartinCowey/fishing_project/issues/20) | As a _User_, I can _see clear navigation links throughout the site_ so that _I can move around the platform easily_. | Must |
+| [#56](https://github.com/MartinCowey/fishing_project/issues/56) | As a _User_, I can _interact with blogs_ so that _I can like, share, or engage with the posts_. | Should |
+| [#60](https://github.com/MartinCowey/fishing_project/issues/60) | As a _Site Owner_, I can _include Terms and Conditions_ so that _users are aware of the guidelines for using the site_. | Could |
+| [#61](https://github.com/MartinCowey/fishing_project/issues/61) | As a _User_, I can _search for content by keyword_ so that _I can find relevant posts quickly_. | Could |
+
+Some of the numbers for the project tasks skipped but at this moment I'm not sure why. However these are my user stories for my mvp. In retrospect I feel it would have been better to group these and fomr blocks. I have done this a little in my project board but this is primarily due to not knowing how far I would get on my initial mvp. I managed to get through it relatively quick so had to make some more user stories, and perhaps overlaps.
 
 <hr>
 <p align="right"><a href="#fished-it-mate">Back To Top</a></p>
@@ -724,6 +746,8 @@ Responsive and defensive design
 
 Youtube
 [Bro Code](https://www.youtube.com/@BroCodez)
+[Web Dev](https://www.youtube.com/@WebDevSimplified)
+
 
 
 
