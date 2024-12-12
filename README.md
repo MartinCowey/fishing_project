@@ -42,33 +42,38 @@ Fished it, Mate! Is meant to be a blog site for fishing. The user can create rea
 <br>
 <hr>
 
-# Contents
-
-<details>
-<summary>
-Table of Contents ::
-</summary>
-
-- [Design](#design)
-  - [Colour Scheme](#colour-scheme)
-  - [Fonts](#fonts)
-  - [Wireframes](#wireframes)
-    - [Desktop](#desktop)
-    - [Mobile)](#mobile)
-
-- [Models](#models-)
-  - [Database Schema](#database-schema)
-  - [All Auth](#allauth-user-model)
-  - [Blog](#blog-model)
-  - [Comments](#comment-model)
-  - [Custom](#custom-model)
-    - [Profile custom 1](#profile-model---custom-1)
-    - [Location custom 2](#location-model---custom-2)
-<br>
-</details>
 <br>
 <br>
 <hr>
+
+# Table of Contents
+
+<details>
+<summary>Click to expand</summary>
+
+- [Fished it, Mate!](#fished-it-mate)
+- [Design](#design)
+  - [Colour Scheme](#colour-scheme)
+  - [Fonts](#fonts)
+- [Project Planning](#project-planning)
+- [UX](#ux)
+- [Agile Methodologies - Project Management](#agile-methodologies---project-management)
+  - [MoSCoW Prioritization](#moscow-prioritization)
+  - [User Stories](#user-stories)
+- [Wireframes](#wireframes)
+  - [Desktop](#desktop)
+  - [Tablet](#tablet)
+  - [Mobile](#mobile)
+- [Models](#models)
+  - [Database Schema](#database-schema)
+  - [Allauth User Model](#allauth-user-model)
+  - [Blog Model](#blog-model)
+  - [Comment Model](#comment-model)
+  - [Profile Model - custom //1](#profile-model---custom-1)
+  - [Location Model - custom //2](#location-model---custom-2)
+
+</details>
+
 
 ## Design
 
@@ -117,9 +122,6 @@ as the normal font colour wasn't passing the contrast checker:
 
 # Project Planning  
  
-## Strategy Plane
-
-
 
 ### Site Goals
 
@@ -614,10 +616,6 @@ As the project progressed I realised my MVP was met in the first week, so began 
 ToolTips for hovering over icons etc.
 user profile 
 
-# Testing
-
-Please find Testing and Validation for my project and custom apps in the [TESTING.md](TESTING.md) file
-
 
 <hr>
 <p align="right"><a href="#fished-it-mate">Back To Top</a></p>
@@ -655,6 +653,9 @@ Users can Create, Read, Update, and Delete content on **Fished It! Mate**. Some 
 ---
 
 
+# Testing
+
+Please find Testing and Validation for my project and custom apps in the [TESTING.md](TESTING.md) file
 
 
 
