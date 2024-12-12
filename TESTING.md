@@ -9,19 +9,18 @@
   - [lighthouse](#lighthouse-scores)
   - [Wave](#wave-accisibility-evaluation)
   - [Accessible and Compliant checker](#accessible-and-compliant-checker)
-  - [Accessible and Compliant checker](#accessible-and-compliant-checker)
-  - [Accessible and Compliant checker](#accessible-and-compliant-checker)
-  - [Accessible and Compliant checker](#accessible-and-compliant-checker)
+ 
    
 
 - [Maunual Testing](#models-)
-  - [Database Schema](#database-schema)
-  - [All Auth](#allauth-user-model)
-  - [Blog](#blog-model)
-  - [Comments](#comment-model)
-  - [Custom](#custom-model)
-    - [Profile custom 1](#profile-model---custom-1)
-    - [Accessible and Compliant checker](#location-model---custom-2)
+  - [User Input/Form Validation](#user-inputform-validation)
+  - [Testing Features](#testing-features-for-fished-it-mate)
+  - [Dev Tools/Real World Testing](#dev-toolsreal-world-testing)
+  - [Browser Compatibility](#browser-compatibility)
+
+- [Errors and Bugs](#errors-and-bugs)
+  - [Custom App errors and bugs](#custom-app-errors-and-bugs)
+  - [Errors Encountered and Resolutions](#errors-encountered-and-resolutions)
 
 
 ## Validation

@@ -622,6 +622,42 @@ Please find Testing and Validation for my project and custom apps in the [TESTIN
 <hr>
 <p align="right"><a href="#fished-it-mate">Back To Top</a></p>
 
+## Features
+
+
+## User View - Registered/Unregistered
+
+Most of the content is available to an unregistered user for viewing. However, posting, editing, and deleting blogs or comments is limited to registered users. The navbar dynamically updates depending on the user's authentication status. Additionally, certain buttons and sections of the website adapt based on whether a user is logged in.
+
+| Feature               | Unregistered User                       | Registered, Logged-In User                                         |
+|-----------------------|------------------------------------------|--------------------------------------------------------------------|
+| Home Page            | Visible - general content available      | Visible - personalized sections available (e.g., user-specific options) |
+| Blog List            | Visible - can view blog posts            | Visible - can view and interact with blog posts                   |
+| Blog Detail          | Visible - can view details and comments, no interactions | Visible - full interaction (add/edit/delete blog or comment)      |
+| Profile Page         | Not Visible                              | Visible - can view and edit own profile                           |
+| Add Blog Post        | Not Available                            | Available - users can create new blog posts                       |
+| Comment on Blog      | Not Available                            | Available - users can add, edit, or delete their own comments     |
+| Footer Links         | Visible                                  | Visible                                                          |
+
+---
+
+## CRUD Functionality
+
+Users can Create, Read, Update, and Delete content on **Fished It! Mate**. Some features provide full CRUD functionality, while others are limited depending on the feature. Below is the breakdown:
+
+| Feature        | Create       | Read                         | Update                       | Delete                       |
+|----------------|--------------|------------------------------|------------------------------|------------------------------|
+| Profiles       | Yes - when registering | Yes - view own profile            | Yes - users can edit their profile information | Yes - users can delete their profile |
+| Blog Posts     | Yes - create a new blog post | Yes - view blog posts             | Yes - users can edit their own blog posts | Yes - users can delete their own blog posts |
+| Comments       | Yes - on blog posts       | Yes - visible on blog posts       | Yes - users can edit their own comments       | Yes - users can delete their own comments    |
+| Likes (Future Feature)| No (yet)            | No                               | No                              | No                              |
+
+---
+
+
+
+
+
 # Acknowledgements
 
 
